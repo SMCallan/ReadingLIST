@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Reading List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0b09;
+    --surface: #141210;
+    --card: #1c1a16;
+    --card-hover: #232018;
+    --border: #2a2620;
+    --text: #e8dcc8;
+    --text-muted: #7d7468;
+    --text-dim: #4a4540;
+    --gold: #c9a84c;
+    --gold-light: #e4c87a;
+    --gold-dim: #6b5820;
+    --blue: #5a8fb5;
+    --blue-dim: #2a4560;
+    --new: #6db87a;
+    --new-dim: #1e3d24;
+    --radius: 4px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ── Progress Bar ── */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    z-index: 1000;
+    transition: width 0.2s ease;
+  }
+
+  /* ── Top Nav ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(12, 11, 9, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav .nav-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  nav .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  nav .nav-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  nav .nav-links a:hover { color: var(--gold); }
+
+  #counter {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    background: rgba(201, 168, 76, 0.08);
+    border: 1px solid var(--gold-dim);
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 140px 2rem 80px;
+    max-width: 860px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold-dim);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    max-width: 580px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid;
+  }
+
+  .badge-gold { color: var(--gold); border-color: var(--gold-dim); background: rgba(201,168,76,0.05); }
+  .badge-blue { color: var(--blue); border-color: var(--blue-dim); background: rgba(90,143,181,0.05); }
+  .badge-green { color: var(--new); border-color: var(--new-dim); background: rgba(109,184,122,0.05); }
+
+  /* ── Main Container ── */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem 8rem;
+  }
+
+  /* ── Section Headers ── */
+  .section-header {
+    padding: 5rem 0 2.5rem;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-s1 .section-num { color: var(--blue); }
+  .section-s2 .section-num { color: var(--gold); }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    max-width: 580px;
+    line-height: 1.8;
+    border-left: 2px solid var(--border);
+    padding-left: 1.25rem;
+  }
+
+  /* ── Tier ── */
+  .tier {
+    margin-bottom: 0.5rem;
+  }
+
+  .tier-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0 1.25rem;
+  }
+
+  .tier-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    flex-shrink: 0;
+  }
+
+  .tier-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .tier-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Book Card ── */
+  .book {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    margin-bottom: 0.75rem;
+    transition: border-color 0.2s, background 0.2s;
+    overflow: hidden;
+  }
+
+  .book:hover {
+    border-color: #3a3630;
+    background: var(--card-hover);
+  }
+
+  .book.is-read {
+    opacity: 0.45;
+  }
+
+  .book.is-read .book-num {
+    color: var(--new);
+  }
+
+  .book-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .book-check {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .book-check:hover {
+    border-color: var(--gold);
+  }
+
+  .book.is-read .book-check {
+    background: var(--new-dim);
+    border-color: var(--new);
+  }
+
+  .book-check::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 6px;
+    border-left: 1.5px solid var(--new);
+    border-bottom: 1.5px solid var(--new);
+    transform: rotate(-45deg) translateY(-1px);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .book.is-read .book-check::after {
+    opacity: 1;
+  }
+
+  .book-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+    min-width: 24px;
+  }
+
+  .book-meta {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .book-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.2rem;
+  }
+
+  .book-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .new-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--new);
+    background: var(--new-dim);
+    border: 1px solid rgba(109,184,122,0.3);
+    padding: 2px 7px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .book-author {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .book-publisher {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .book-toggle {
+    flex-shrink: 0;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    transition: transform 0.25s, color 0.2s;
+  }
+
+  .book.is-open .book-toggle {
+    transform: rotate(180deg);
+    color: var(--gold);
+  }
+
+  .book-body {
+    display: none;
+    padding: 0 1.25rem 1.25rem 3.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .book.is-open .book-body {
+    display: block;
+  }
+
+  .book-why {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    background: rgba(255,255,255,0.02);
+    border-left: 2px solid var(--gold-dim);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .book-why-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .book-why p {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  /* ── Section Divider ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0 0;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: gap;
+    gap: 1rem;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    font-family: 'DM Mono', monospace;
+  }
+
+  footer .footer-credit {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero { animation: fadeUp 0.7s ease both; }
+  .book { animation: fadeUp 0.4s ease both; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    nav .nav-links { display: none; }
+    .hero { padding: 100px 1.25rem 60px; }
+    main { padding: 0 1.25rem 6rem; }
+    footer { padding: 2rem 1.25rem; flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav>
+  <span class="nav-title">Master Reading List</span>
+  <ul class="nav-links">
+    <li><a href="#section-1">Clinical</a></li>
+    <li><a href="#section-2">Persuasion</a></li>
+  </ul>
+  <span id="counter">0 / 32 read</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Practitioner's Toolkit · Version 2.0</div>
+  <h1>The <em>Reading List</em></h1>
+  <p class="hero-sub">A curated repository spanning clinical psychology, mentalization, neurobiology, and the behavioral science of influence. Ordered canonically — foundational theory first, applied practice last. Each tier compounds on the one before it.</p>
+  <div class="badges">
+    <span class="badge badge-blue">32 Texts</span>
+    <span class="badge badge-gold">2 Sections · 8 Tiers</span>
+    <span class="badge badge-green">10 New Additions</span>
+    <span class="badge badge-gold">Click any entry to expand</span>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1
+═══════════════════════════════════════════════ -->
+<div id="section-1" class="section-header section-s1">
+  <div class="section-num">Section 01</div>
+  <h2>Clinical Psychology,<br>Neurobiology &amp; Mentoring</h2>
+  <p class="section-desc">Ordered from biological substrate → theoretical framework → developmental context → applied tools. The tiers compound: each layer is built on the one before it.</p>
+</div>
+
+<!-- TIER 1 -->
+<div class="tier">
+  <div class="tier-header">
+    <span class="tier-num">Tier 1</span>
+    <span class="tier-title">Biological &amp; Neurological Foundations</span>
+    <div class="tier-line"></div>
+  </div>
+
+  <div class="book" data-num="01">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">01</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">The Polyvagal Theory</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Stephen W. Porges · 2011</div>
+        <div class="book-publisher">W. W. Norton &amp; Company</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is first</div>
+        <p>The single most foundational addition to this list. Polyvagal Theory explains why co-regulation works at a physiological level — neuroception, the vagal brake, the hierarchy of the autonomic nervous system. Your own regulation is not a soft skill; it is a biological instrument. Underpins everything Fonagy, Siegel, and Voss describe without knowing they are describing the same system.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="02">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">02</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Developmental Cognitive Neuroscience: An Introduction</span>
+        </div>
+        <div class="book-author">Mark H. Johnson &amp; Michelle de Haan · 2015 (4th ed.)</div>
+        <div class="book-publisher">Wiley-Blackwell</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>The structural map of the developing brain from birth through adolescence. Foundational empirical neuroscience before clinical application. The "why" behind every clinical intervention with young people.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="03">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">03</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Rutter's Child and Adolescent Psychiatry</span>
+        </div>
+        <div class="book-author">Thapar, Pine, Leckman et al. (Eds.) · 2015 (6th ed.)</div>
+        <div class="book-publisher">John Wiley &amp; Sons</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>The clinical reference standard. Dense and encyclopaedic — not a cover-to-cover read — but the authoritative empirical map of the full diagnostic and developmental landscape you work in. The benchmark against which all applied texts should be checked.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="04">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">04</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Inventing Ourselves: The Secret Life of the Teenage Brain</span>
+        </div>
+        <div class="book-author">Sarah-Jayne Blakemore · 2018</div>
+        <div class="book-publisher">PublicAffairs</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>Rutter translated for the practitioner. Blakemore bridges rigorous neuroscience into the lived experience of adolescence — risk-taking, identity, social sensitivity, peer influence. The most readable entry point to the empirical neuroscience of the cohort you mentor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIER 2 -->
+<div class="tier">
+  <div class="tier-header">
+    <span class="tier-num">Tier 2</span>
+    <span class="tier-title">Mentalization &amp; Psychodynamic Theory</span>
+    <div class="tier-line"></div>
+  </div>
+
+  <div class="book" data-num="05">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">05</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Affect Regulation, Mentalization, and the Development of the Self</span>
+        </div>
+        <div class="book-author">Fonagy, Gergely, Jurist &amp; Target · 2002</div>
+        <div class="book-publisher">Other Press</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is first in tier</div>
+        <p>The canonical theoretical text. Fonagy at full theoretical depth — the developmental origins of mentalization, why affect regulation and reflective functioning are inseparable, and how early relational failures produce the clinical presentations you will have managed in NHS acute settings. Read before any of the applied Fonagy material.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="06">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">06</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Inside Lives: Psychoanalysis and the Growth of the Personality</span>
+        </div>
+        <div class="book-author">Margot Waddell · 2002 (Rev. ed.)</div>
+        <div class="book-publisher">Karnac Books</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>The most accessible entry into object relations and Kleinian developmental theory. Where Fonagy gives you the empirical architecture, Waddell gives you the emotional phenomenology — what it feels like to be a developing person. Essential for understanding the adolescents you work with from the inside out.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="07">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">07</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Multiple Voices: Narrative in Systemic Family Psychotherapy</span>
+        </div>
+        <div class="book-author">Renos K. Papadopoulos (Ed.) · 2001</div>
+        <div class="book-publisher">Routledge</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>Bridges psychodynamic theory into the systemic and narrative frame. Particularly relevant for inner city youth work where family systems are complex, fragmented, or adversarial. Sits between the Fonagy theoretical core and the applied AMBIT framework.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="08">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">08</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Adaptive Mentalization-Based Integrative Treatment (AMBIT)</span>
+        </div>
+        <div class="book-author">Bevington, Fuggle, Cracknell &amp; Fonagy · 2017</div>
+        <div class="book-publisher">Oxford University Press</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>Theory translated into a team-based, community-facing system of care. The most directly applicable clinical framework for working with hard-to-reach young people outside formal clinical settings — i.e., exactly what park-bench mentoring requires. Read Fonagy (2002) first.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="09">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">09</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Mentalization-Based Treatment for Adolescents: A Practical Guide</span>
+        </div>
+        <div class="book-author">Rossouw &amp; Fonagy · 2021</div>
+        <div class="book-publisher">American Psychiatric Association Publishing</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is last in tier</div>
+        <p>The most applied end of the Fonagy school. A practical clinical manual for MBT-A. Read last in this tier — it assumes the theory and system above.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIER 3 -->
+<div class="tier">
+  <div class="tier-header">
+    <span class="tier-num">Tier 3</span>
+    <span class="tier-title">Youth Development, Adversity &amp; Context</span>
+    <div class="tier-line"></div>
+  </div>
+
+  <div class="book" data-num="10">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">10</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Man's Search for Meaning</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Viktor E. Frankl · 1959</div>
+        <div class="book-publisher">Beacon Press</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is first in tier</div>
+        <p>Foundational before the others in this tier because it establishes the primary motivational question: why engage with anything at all? When a disengaged inner city adolescent has no reason to engage with life, logotherapy is not philosophy — it is the only framework that directly addresses the clinical obstacle. Meaning as the core human driver.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="11">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">11</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Mindset: The New Psychology of Success</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Carol S. Dweck · 2006</div>
+        <div class="book-publisher">Random House</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>The most glaring omission from the original list. Growth vs fixed mindset is the operational framework of effective youth mentoring — particularly with young people who have been institutionally designated as failures. The research is robust; the practical application is immediate.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="12">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">12</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Scattered Minds: The Origins and Healing of Attention Deficit Disorder</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Gabor Maté · 2019</div>
+        <div class="book-publisher">Random House</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>Maté's central argument — that ADHD is substantially a developmental trauma response rather than a fixed neurodevelopmental trait — directly reframes how you approach the disengaged, dysregulated young people in your caseload. The NHS acute population and inner city London mentoring cohort have enormous ADHD-trauma overlap.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="13">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">13</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">The Boy Who Was Raised as a Dog</span>
+        </div>
+        <div class="book-author">Bruce D. Perry &amp; Maia Szalavitz · 2017 (Rev. ed.)</div>
+        <div class="book-publisher">Basic Books</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>Perry's Neurosequential Model of Therapeutics in narrative form. More developmentally focused than van der Kolk, more accessible than the clinical papers. Shows what developmental trauma looks like as a lived experience — essential for understanding your mentoring cohort's histories.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="14">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">14</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">How Children Succeed: Grit, Curiosity, and the Hidden Power of Character</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Paul Tough · 2012</div>
+        <div class="book-publisher">Houghton Mifflin Harcourt</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>Fills a structural gap nothing else on the list fills. Drawing on economics, neuroscience, and education research, Tough maps why disadvantaged young people succeed or fail. Less clinical than the Fonagy school, more structural. Essential for understanding why inner city mentoring is categorically different from suburban mentoring.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="15">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">15</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">iGen: Why Today's Super-Connected Kids Are Growing Up Less Rebellious, More Tolerant, Less Happy</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Jean M. Twenge · 2017</div>
+        <div class="book-publisher">Atria Books</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Specific to your profile</div>
+        <p>Your tech background means you will read Twenge's data differently to most practitioners — you understand what she's describing from the architecture side as well as the clinical side. The smartphone generation's anxiety, identity fragmentation, and attention patterns are the actual digital context your mentees are living inside. No other text on this list addresses this directly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIER 4 -->
+<div class="tier">
+  <div class="tier-header">
+    <span class="tier-num">Tier 4</span>
+    <span class="tier-title">Conversational Tooling &amp; Clinical Bridge</span>
+    <div class="tier-line"></div>
+  </div>
+
+  <div class="book" data-num="16">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">16</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Narrative Means to Therapeutic Ends</span>
+        </div>
+        <div class="book-author">Michael White &amp; David Epston · 1990</div>
+        <div class="book-publisher">W. W. Norton &amp; Company</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>The foundational text of narrative therapy. Externalisation of problems, re-authoring conversations, and the therapeutic use of story sit at the heart of effective youth work and connect directly to the systemic-narrative layer in Papadopoulos above.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="17">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">17</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Motivational Interviewing with Adolescents and Young Adults</span>
+        </div>
+        <div class="book-author">Naar &amp; Suarez · 2021 (2nd ed.)</div>
+        <div class="book-publisher">Guilford Press</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this over Miller &amp; Rollnick's original</div>
+        <p>This adaptation is built specifically for developmental resistance in youth — the ambivalence, the identity investment in non-change, the anti-authority stance. Preferred over the canonical original text for your context because you are mentoring teenagers, not adults in addiction services.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="18">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">18</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Motivational Interviewing in Schools</span>
+        </div>
+        <div class="book-author">Rollnick, Kaplan &amp; Rutschman · 2016</div>
+        <div class="book-publisher">Guilford Publications</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>The most specific application of MI to the environments your mentees actually inhabit. Pairs with Naar &amp; Suarez to give you the full MI toolkit for adolescent work in non-clinical settings.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2
+═══════════════════════════════════════════════ -->
+<div id="section-2" class="section-header section-s2">
+  <div class="section-num">Section 02</div>
+  <h2>Persuasion, Negotiation<br>&amp; Charisma</h2>
+  <p class="section-desc">Ordered architecturally — theoretical neuroscience and psychology first, tactical frameworks second, applied behaviours third, power dynamics last. The theory makes the tactics legible; the tactics make the theory usable.</p>
+</div>
+
+<!-- TIER 5 -->
+<div class="tier">
+  <div class="tier-header">
+    <span class="tier-num">Tier 1</span>
+    <span class="tier-title">The Architecture of Human Decision-Making</span>
+    <div class="tier-line"></div>
+  </div>
+
+  <div class="book" data-num="19">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">19</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Thinking, Fast and Slow</span>
+        </div>
+        <div class="book-author">Daniel Kahneman · 2011</div>
+        <div class="book-publisher">Farrar, Straus and Giroux</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is first in section</div>
+        <p>The canonical foundation. System 1 vs System 2 is the theoretical architecture on which every tactical persuasion framework in this section is built. Ariely, Cialdini, Voss, and Klaff are all operating inside the framework Kahneman describes. Read this first and the rest of the section becomes a practical field manual for a single unified theory.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="20">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">20</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Predictably Irrational: The Hidden Forces That Shape Our Decisions</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Dan Ariely · 2008</div>
+        <div class="book-publisher">HarperCollins</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>Where Kahneman is the architecture, Ariely is the field manual. Shows exactly how irrationality operates in pricing, social norms, expectations, and daily decisions — with experiments immediately generalisable to sales, negotiation, and influence. More tactically applied than Kahneman.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="21">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">21</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">The Righteous Mind: Why Good People Are Divided by Politics and Religion</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Jonathan Haidt · 2012</div>
+        <div class="book-publisher">Pantheon Books</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">The single biggest gap in the original list</div>
+        <p>Cialdini tells you how to influence; Kahneman tells you why people are irrational; Haidt tells you why people hold the values they hold. Moral foundations theory is the most powerful persuasion framework that was missing. Essential for cross-cultural, cross-class influence — which inner city London work and commercial negotiations both require constantly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="22">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">22</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Influence: The Psychology of Persuasion</span>
+        </div>
+        <div class="book-author">Robert B. Cialdini · 1984</div>
+        <div class="book-publisher">Harper Business</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>The applied translation of the Kahneman framework into six universal principles: reciprocity, commitment, social proof, authority, liking, scarcity. The most empirically grounded tactical persuasion text in existence. Read after Kahneman and Ariely — the principles land with greater force once you understand the cognitive architecture they exploit.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="23">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">23</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Pre-Suasion: A Revolutionary Way to Influence and Persuade</span>
+        </div>
+        <div class="book-author">Robert B. Cialdini · 2016</div>
+        <div class="book-publisher">Simon &amp; Schuster</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this follows Influence</div>
+        <p>Influence maps the six principles. Pre-Suasion covers the moment before the ask — how environmental and contextual priming determines receptivity before a word is spoken. The natural sequel; read immediately after Influence.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIER 6 -->
+<div class="tier">
+  <div class="tier-header">
+    <span class="tier-num">Tier 2</span>
+    <span class="tier-title">High-Stakes Negotiation · Tactical Empathy</span>
+    <div class="tier-line"></div>
+  </div>
+
+  <div class="book" data-num="24">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">24</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Getting to Yes: Negotiating Agreement Without Giving In</span>
+        </div>
+        <div class="book-author">Roger Fisher &amp; William Ury · 1981</div>
+        <div class="book-publisher">Penguin Books</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is first</div>
+        <p>The academic gold standard and canonical starting point. Principled negotiation — separating the person from the problem, focusing on underlying interests rather than stated positions — is the foundational theory. Read before Getting Past No and Never Split the Difference, both of which are responses to situations this book assumes away.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="25">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">25</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Getting Past No: Negotiating in Difficult Situations</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">William Ury · 1991</div>
+        <div class="book-publisher">Bantam Books</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>The field manual for when the other side refuses, stalls, or attacks — the tactical counterpart to the theoretical framework in Getting to Yes. More practically useful in adversarial or emotionally charged negotiations. Bridges directly into the silver tongue skillset.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="26">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">26</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Never Split the Difference</span>
+        </div>
+        <div class="book-author">Chris Voss &amp; Tahl Raz · 2016</div>
+        <div class="book-publisher">HarperBusiness</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is last in tier</div>
+        <p>Clinical psychology tools weaponised for negotiation — mirroring, labelling, dynamic silence, calibrated questions. The most tactically dense text in this tier. Read last; it assumes and extends everything Fisher, Ury, Kahneman, and Cialdini establish.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIER 7 -->
+<div class="tier">
+  <div class="tier-header">
+    <span class="tier-num">Tier 3</span>
+    <span class="tier-title">Charisma, Frame Control &amp; Micro-Behaviour</span>
+    <div class="tier-line"></div>
+  </div>
+
+  <div class="book" data-num="27">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">27</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">How to Win Friends and Influence People</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Dale Carnegie · 1936</div>
+        <div class="book-publisher">Simon &amp; Schuster</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is first in tier</div>
+        <p>The list had strong theoretical architecture and was missing the micro-behavioural layer entirely. Carnegie operates at the level of specific conversational moves — genuine interest, active listening, remembering names, letting people feel heard — that Cialdini and Voss assume you already possess. Read before Cabane and Klaff; the higher-level frameworks land better when the foundations are explicit.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="28">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">28</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">The Charisma Myth</span>
+        </div>
+        <div class="book-author">Olivia Fox Cabane · 2012</div>
+        <div class="book-publisher">Portfolio / Penguin</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>Charisma decomposed into three learnable components — Presence, Power, and Warmth — and rebuilt as a practical behavioural system. Removes the mythology from magnetism. The natural bridge from Carnegie's micro-behaviours into Klaff's higher-order frame control.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="29">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">29</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">Pitch Anything</span>
+        </div>
+        <div class="book-author">Oren Klaff · 2011</div>
+        <div class="book-publisher">McGraw-Hill</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is last in tier</div>
+        <p>Frame control at the neurological level. Most pitches fail because they address the neocortex; all information is filtered first by the amygdala. Klaff's STRONG framework teaches you to win the neurological filter before logic enters. Read last in this tier — requires the micro-behavioural and charisma foundations to execute properly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIER 8 -->
+<div class="tier">
+  <div class="tier-header">
+    <span class="tier-num">Tier 4</span>
+    <span class="tier-title">Power, Dark Arts &amp; Practitioner Regulation</span>
+    <div class="tier-line"></div>
+  </div>
+
+  <div class="book" data-num="30">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">30</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">The Art of Being Right (Eristic Dialectic)</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Arthur Schopenhauer · c.1831 (posthumous)</div>
+        <div class="book-publisher">Various editions</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is first in tier</div>
+        <p>Fundamentally about epistemology and argumentation — the mechanics of how people win disputes regardless of truth. Thirty-eight stratagems for argument. Essential for frame control: both for deploying these tactics and, critically, for recognising when they are being used on you. The dark arts companion on logic and rhetoric.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="31">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">31</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">The 48 Laws of Power</span>
+        </div>
+        <div class="book-author">Robert Greene · 1998</div>
+        <div class="book-publisher">Viking Press</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is here</div>
+        <p>The translation layer that makes the primary historical sources redundant for a practitioner. Greene synthesises thousands of years of power strategy into modern, applicable laws. Ruthless, amoral, and essential for reading the subtext of office politics, commercial negotiations, and personal branding. Read after Schopenhauer — the laws land with greater force once you understand the dialectical mechanics underneath them.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book" data-num="32">
+    <div class="book-header" onclick="toggleBook(this)">
+      <div class="book-check" onclick="toggleRead(event, this)"></div>
+      <span class="book-num">32</span>
+      <div class="book-meta">
+        <div class="book-title-row">
+          <span class="book-title">The Obstacle Is the Way</span>
+          <span class="new-tag">New</span>
+        </div>
+        <div class="book-author">Ryan Holiday · 2014</div>
+        <div class="book-publisher">Portfolio / Penguin</div>
+      </div>
+      <span class="book-toggle">▾</span>
+    </div>
+    <div class="book-body">
+      <div class="book-why">
+        <div class="book-why-label">Why this is last on the entire list</div>
+        <p>The regulation framework for practitioners operating in high-stakes environments. Stoic philosophy stripped of academic weight and rebuilt as a field manual for adversity. The discipline of non-reaction, the reframing of obstacles as material, the acceptance of what cannot be controlled. Everything Porges describes neurologically, the Stoics described philosophically. Read when the rest of the list is complete.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <p>Version 2.0 · 2026</p>
+  <p class="footer-credit">Curated across Gemini &amp; Claude · 🆕 = added in revision · Ordered canonically</p>
+</footer>
+
+<script>
+  // Toggle book expand/collapse
+  function toggleBook(header) {
+    const book = header.closest('.book');
+    book.classList.toggle('is-open');
+  }
+
+  // Toggle read/unread
+  function toggleRead(e, checkEl) {
+    e.stopPropagation();
+    const book = checkEl.closest('.book');
+    book.classList.toggle('is-read');
+    updateCounter();
+    saveState();
+  }
+
+  // Update counter
+  function updateCounter() {
+    const total = document.querySelectorAll('.book').length;
+    const read = document.querySelectorAll('.book.is-read').length;
+    document.getElementById('counter').textContent = `${read} / ${total} read`;
+  }
+
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    document.getElementById('progress-bar').style.width = progress + '%';
+  });
+
+  // Persist state in localStorage
+  function saveState() {
+    const state = {};
+    document.querySelectorAll('.book').forEach(b => {
+      state[b.dataset.num] = b.classList.contains('is-read');
+    });
+    try { localStorage.setItem('readingList', JSON.stringify(state)); } catch(e) {}
+  }
+
+  function loadState() {
+    try {
+      const state = JSON.parse(localStorage.getItem('readingList') || '{}');
+      document.querySelectorAll('.book').forEach(b => {
+        if (state[b.dataset.num]) b.classList.add('is-read');
+      });
+    } catch(e) {}
+    updateCounter();
+  }
+
+  // Staggered entrance animations
+  function animateBooks() {
+    const books = document.querySelectorAll('.book');
+    books.forEach((book, i) => {
+      book.style.animationDelay = `${i * 0.03}s`;
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadState();
+    animateBooks();
+  });
+</script>
+</body>
+</html>
