@@ -1,9 +1,7 @@
 # 📚 Master Reading List
 
-![Status](https://img.shields.io/badge/status-active-brightgreen) ![Sections](https://img.shields.io/badge/sections-2-blue) ![Books](https://img.shields.io/badge/books-31-orange) ![Version](https://img.shields.io/badge/version-2.0-purple)
+![Status](https://img.shields.io/badge/status-active-brightgreen) ![Sections](https://img.shields.io/badge/sections-2-blue) ![Books](https://img.shields.io/badge/books-32-orange) [![Website](https://img.shields.io/badge/view-website-gold)](https://smcallan.github.io/ReadingLIST/)
 
-
-Visit [Website](#https://smcallan.github.io/ReadingLIST/)
 > **Overview**
 > A curated practitioner's toolkit spanning clinical psychology, mentalization, neurobiology, and the behavioral science of influence. Built for an experienced NHS clinician bridging into adolescent mentoring and high-level persuasion.
 >
@@ -434,6 +432,4 @@ Visit [Website](#https://smcallan.github.io/ReadingLIST/)
 
 ---
 
-> *Version 2.0 · Last updated: 2026*
-> *Curated across Gemini (context & curation) and Claude (critique & additions) · 🆕 = added in revision*
 > *Ordered canonically: foundational theory → applied practice. Read in sequence for maximum compounding.*
