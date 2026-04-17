@@ -3,7 +3,7 @@
 ![Status](https://img.shields.io/badge/status-active-brightgreen) ![Sections](https://img.shields.io/badge/sections-2-blue) ![Books](https://img.shields.io/badge/books-31-orange) ![Version](https://img.shields.io/badge/version-2.0-purple)
 
 
-Visit [https://smcallan.github.io/ReadingLIST/](#Like-This)
+Visit [Website](#https://smcallan.github.io/ReadingLIST/)
 > **Overview**
 > A curated practitioner's toolkit spanning clinical psychology, mentalization, neurobiology, and the behavioral science of influence. Built for an experienced NHS clinician bridging into adolescent mentoring and high-level persuasion.
 >
