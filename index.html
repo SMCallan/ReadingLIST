@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Master Reading List</title>
+<title>Alternative Provision Mentor Toolkit</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0c0b09;
@@ -14,24 +14,27 @@
     --card-hover: #232018;
     --border: #2a2620;
     --text: #e8dcc8;
-    --text-muted: #7d7468;
-    --text-dim: #4a4540;
+    --text-muted: #8d8374;
+    --text-dim: #4f4941;
     --gold: #c9a84c;
     --gold-light: #e4c87a;
     --gold-dim: #6b5820;
     --blue: #5a8fb5;
     --blue-dim: #2a4560;
-    --new: #6db87a;
-    --new-dim: #1e3d24;
-    --radius: 4px;
+    --green: #6db87a;
+    --green-dim: #1e3d24;
+    --red: #d07a66;
+    --red-dim: #4d241e;
+    --purple: #a98bd1;
+    --purple-dim: #34244a;
+    --radius: 6px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--bg);
+    background: radial-gradient(circle at top, #15120d 0, var(--bg) 42%);
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
@@ -39,7 +42,6 @@
     font-size: 15px;
   }
 
-  /* ── Progress Bar ── */
   #progress-bar {
     position: fixed;
     top: 0; left: 0;
@@ -50,7 +52,6 @@
     transition: width 0.2s ease;
   }
 
-  /* ── Top Nav ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -59,7 +60,7 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 0 2rem;
-    height: 52px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,12 +76,12 @@
 
   nav .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.4rem;
     list-style: none;
   }
 
   nav .nav-links a {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -99,12 +100,12 @@
     padding: 3px 10px;
     border-radius: 20px;
     letter-spacing: 0.05em;
+    white-space: nowrap;
   }
 
-  /* ── Hero ── */
   .hero {
-    padding: 140px 2rem 80px;
-    max-width: 860px;
+    padding: 140px 2rem 64px;
+    max-width: 920px;
     margin: 0 auto;
     border-bottom: 1px solid var(--border);
   }
@@ -131,12 +132,12 @@
 
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    font-size: clamp(2.8rem, 6vw, 5rem);
     font-weight: 300;
-    line-height: 1.1;
+    line-height: 1.05;
     color: var(--text);
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.01em;
+    margin-bottom: 1.4rem;
+    letter-spacing: -0.02em;
   }
 
   .hero h1 em {
@@ -145,11 +146,42 @@
   }
 
   .hero-sub {
-    max-width: 580px;
+    max-width: 680px;
     color: var(--text-muted);
-    font-size: 0.92rem;
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
+    font-size: 0.94rem;
+    line-height: 1.85;
+    margin-bottom: 2rem;
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.6rem;
+    margin: 2rem 0;
+  }
+
+  .principle {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    border-radius: var(--radius);
+    padding: 0.8rem;
+    min-height: 96px;
+  }
+
+  .principle strong {
+    display: block;
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+
+  .principle span {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    line-height: 1.45;
   }
 
   .badges {
@@ -160,7 +192,7 @@
 
   .badge {
     font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.64rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 4px 12px;
@@ -170,16 +202,42 @@
 
   .badge-gold { color: var(--gold); border-color: var(--gold-dim); background: rgba(201,168,76,0.05); }
   .badge-blue { color: var(--blue); border-color: var(--blue-dim); background: rgba(90,143,181,0.05); }
-  .badge-green { color: var(--new); border-color: var(--new-dim); background: rgba(109,184,122,0.05); }
+  .badge-green { color: var(--green); border-color: var(--green-dim); background: rgba(109,184,122,0.05); }
+  .badge-red { color: var(--red); border-color: var(--red-dim); background: rgba(208,122,102,0.05); }
 
-  /* ── Main Container ── */
   main {
-    max-width: 860px;
+    max-width: 920px;
     margin: 0 auto;
     padding: 0 2rem 8rem;
   }
 
-  /* ── Section Headers ── */
+  .budget-panel {
+    margin: 3rem 0 0;
+    border: 1px solid var(--gold-dim);
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(255,255,255,0.015));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+  }
+
+  .budget-panel h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    margin-bottom: 0.6rem;
+  }
+
+  .budget-panel p,
+  .budget-panel li {
+    color: var(--text-muted);
+    font-size: 0.86rem;
+  }
+
+  .budget-panel ol {
+    margin-left: 1.2rem;
+    margin-top: 0.6rem;
+  }
+
   .section-header {
     padding: 5rem 0 2.5rem;
   }
@@ -192,30 +250,30 @@
     margin-bottom: 0.75rem;
   }
 
-  .section-s1 .section-num { color: var(--blue); }
-  .section-s2 .section-num { color: var(--gold); }
+  .section-blue .section-num { color: var(--blue); }
+  .section-gold .section-num { color: var(--gold); }
+  .section-green .section-num { color: var(--green); }
+  .section-red .section-num { color: var(--red); }
+  .section-purple .section-num { color: var(--purple); }
 
   .section-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3.15rem);
     font-weight: 300;
-    line-height: 1.15;
+    line-height: 1.12;
     margin-bottom: 1rem;
   }
 
   .section-desc {
     color: var(--text-muted);
     font-size: 0.875rem;
-    max-width: 580px;
+    max-width: 660px;
     line-height: 1.8;
     border-left: 2px solid var(--border);
     padding-left: 1.25rem;
   }
 
-  /* ── Tier ── */
-  .tier {
-    margin-bottom: 0.5rem;
-  }
+  .tier { margin-bottom: 0.5rem; }
 
   .tier-header {
     display: flex;
@@ -235,7 +293,7 @@
 
   .tier-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
+    font-size: 1.16rem;
     font-style: italic;
     color: var(--text-muted);
     font-weight: 300;
@@ -247,39 +305,34 @@
     background: var(--border);
   }
 
-  /* ── Book Card ── */
-  .book {
+  .resource {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: var(--card);
     margin-bottom: 0.75rem;
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
     overflow: hidden;
   }
 
-  .book:hover {
+  .resource:hover {
     border-color: #3a3630;
     background: var(--card-hover);
+    transform: translateY(-1px);
   }
 
-  .book.is-read {
-    opacity: 0.45;
-  }
+  .resource.is-complete { opacity: 0.45; }
+  .resource.is-complete .resource-num { color: var(--green); }
 
-  .book.is-read .book-num {
-    color: var(--new);
-  }
-
-  .book-header {
+  .resource-header {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    padding: 1.1rem 1.25rem;
+    padding: 1.08rem 1.25rem;
     cursor: pointer;
     user-select: none;
   }
 
-  .book-check {
+  .resource-check {
     flex-shrink: 0;
     width: 18px;
     height: 18px;
@@ -294,32 +347,28 @@
     background: transparent;
   }
 
-  .book-check:hover {
-    border-color: var(--gold);
+  .resource-check:hover { border-color: var(--gold); }
+
+  .resource.is-complete .resource-check {
+    background: var(--green-dim);
+    border-color: var(--green);
   }
 
-  .book.is-read .book-check {
-    background: var(--new-dim);
-    border-color: var(--new);
-  }
-
-  .book-check::after {
+  .resource-check::after {
     content: '';
     display: block;
     width: 10px;
     height: 6px;
-    border-left: 1.5px solid var(--new);
-    border-bottom: 1.5px solid var(--new);
+    border-left: 1.5px solid var(--green);
+    border-bottom: 1.5px solid var(--green);
     transform: rotate(-45deg) translateY(-1px);
     opacity: 0;
     transition: opacity 0.2s;
   }
 
-  .book.is-read .book-check::after {
-    opacity: 1;
-  }
+  .resource.is-complete .resource-check::after { opacity: 1; }
 
-  .book-num {
+  .resource-num {
     font-family: 'DM Mono', monospace;
     font-size: 0.62rem;
     color: var(--text-dim);
@@ -329,54 +378,55 @@
     min-width: 24px;
   }
 
-  .book-meta {
-    flex: 1;
-    min-width: 0;
-  }
+  .resource-meta { flex: 1; min-width: 0; }
 
-  .book-title-row {
+  .resource-title-row {
     display: flex;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.45rem;
     flex-wrap: wrap;
     margin-bottom: 0.2rem;
   }
 
-  .book-title {
+  .resource-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.12rem;
     font-style: italic;
     font-weight: 400;
     color: var(--text);
     line-height: 1.3;
   }
 
-  .new-tag {
+  .tag {
     font-family: 'DM Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.52rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--new);
-    background: var(--new-dim);
-    border: 1px solid rgba(109,184,122,0.3);
     padding: 2px 7px;
     border-radius: 20px;
     flex-shrink: 0;
-    margin-top: 3px;
+    margin-top: 4px;
+    border: 1px solid;
   }
 
-  .book-author {
+  .tag-priority { color: var(--gold-light); background: rgba(201,168,76,0.1); border-color: var(--gold-dim); }
+  .tag-free { color: var(--green); background: var(--green-dim); border-color: rgba(109,184,122,0.35); }
+  .tag-course { color: var(--blue); background: rgba(90,143,181,0.08); border-color: var(--blue-dim); }
+  .tag-safety { color: var(--red); background: rgba(208,122,102,0.08); border-color: var(--red-dim); }
+  .tag-optional { color: var(--purple); background: rgba(169,139,209,0.08); border-color: var(--purple-dim); }
+
+  .resource-author {
     font-size: 0.8rem;
     color: var(--text-muted);
   }
 
-  .book-publisher {
+  .resource-publisher {
     font-size: 0.72rem;
     color: var(--text-dim);
     font-family: 'DM Mono', monospace;
   }
 
-  .book-toggle {
+  .resource-toggle {
     flex-shrink: 0;
     color: var(--text-dim);
     font-size: 0.8rem;
@@ -384,22 +434,20 @@
     transition: transform 0.25s, color 0.2s;
   }
 
-  .book.is-open .book-toggle {
+  .resource.is-open .resource-toggle {
     transform: rotate(180deg);
     color: var(--gold);
   }
 
-  .book-body {
+  .resource-body {
     display: none;
     padding: 0 1.25rem 1.25rem 3.85rem;
     border-top: 1px solid var(--border);
   }
 
-  .book.is-open .book-body {
-    display: block;
-  }
+  .resource.is-open .resource-body { display: block; }
 
-  .book-why {
+  .resource-why {
     margin-top: 1rem;
     padding: 0.9rem 1rem;
     background: rgba(255,255,255,0.02);
@@ -407,7 +455,7 @@
     border-radius: 0 var(--radius) var(--radius) 0;
   }
 
-  .book-why-label {
+  .resource-why-label {
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem;
     letter-spacing: 0.15em;
@@ -416,29 +464,42 @@
     margin-bottom: 0.4rem;
   }
 
-  .book-why p {
+  .resource-why p,
+  .resource-why li {
     font-size: 0.84rem;
     color: var(--text-muted);
     line-height: 1.75;
   }
 
-  /* ── Section Divider ── */
+  .resource-why ul { margin-left: 1.1rem; }
+
+  .resource-link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-dim);
+  }
+
   .section-divider {
     border: none;
     border-top: 1px solid var(--border);
     margin: 2rem 0 0;
   }
 
-  /* ── Footer ── */
   footer {
     border-top: 1px solid var(--border);
     padding: 2.5rem 2rem;
-    max-width: 860px;
+    max-width: 920px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: gap;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
@@ -448,32 +509,26 @@
     font-family: 'DM Mono', monospace;
   }
 
-  footer .footer-credit {
-    font-size: 0.72rem;
-    color: var(--text-dim);
-  }
-
-  /* ── Scrollbar ── */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
 
-  /* ── Animations ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   .hero { animation: fadeUp 0.7s ease both; }
-  .book { animation: fadeUp 0.4s ease both; }
+  .resource { animation: fadeUp 0.4s ease both; }
 
-  /* ── Responsive ── */
-  @media (max-width: 600px) {
+  @media (max-width: 760px) {
     nav .nav-links { display: none; }
-    .hero { padding: 100px 1.25rem 60px; }
+    .principles { grid-template-columns: 1fr; }
+    .hero { padding: 104px 1.25rem 54px; }
     main { padding: 0 1.25rem 6rem; }
-    footer { padding: 2rem 1.25rem; flex-direction: column; }
+    .resource-body { padding-left: 1.25rem; }
+    footer { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
@@ -482,832 +537,359 @@
 <div id="progress-bar"></div>
 
 <nav>
-  <span class="nav-title">Master Reading List</span>
+  <span class="nav-title">Alternative Provision Mentor Toolkit</span>
   <ul class="nav-links">
-    <li><a href="#section-1">Clinical</a></li>
-    <li><a href="#section-2">Persuasion</a></li>
+    <li><a href="#section-1">Practice</a></li>
+    <li><a href="#section-2">Adolescence</a></li>
+    <li><a href="#section-3">Safety</a></li>
+    <li><a href="#section-4">Depth</a></li>
   </ul>
-  <span id="counter">0 / 32 read</span>
+  <span id="counter">0 / 0 complete</span>
 </nav>
 
 <div class="hero">
-  <div class="hero-eyebrow">Practitioner's Toolkit</div>
-  <h1>The <em>Reading List</em></h1>
-  <p class="hero-sub">A curated repository spanning clinical psychology, mentalization, neurobiology, and the behavioral science of influence. Ordered canonically — foundational theory first, applied practice last. Each tier compounds on the one before it.</p>
+  <div class="hero-eyebrow">Practical Mentor Resource Stack</div>
+  <h1>Alternative Provision<br><em>Wellbeing Toolkit</em></h1>
+  <p class="hero-sub">A practical-first resource list for mentoring, workshops, skills-building and alternative education. The aim is not to turn education staff into clinicians; it is to improve engagement, reduce power struggles, support safer conversations, and build a shared operating language for young people who may be ambivalent, disengaged or defensive.</p>
+
+  <div class="principles">
+    <div class="principle"><strong>Engagement</strong><span>not persuasion</span></div>
+    <div class="principle"><strong>Autonomy</strong><span>not compliance</span></div>
+    <div class="principle"><strong>Curiosity</strong><span>not frame control</span></div>
+    <div class="principle"><strong>Safeguarding</strong><span>not winning</span></div>
+    <div class="principle"><strong>Empowerment</strong><span>not tactical advantage</span></div>
+  </div>
+
   <div class="badges">
-    <span class="badge badge-blue">32 Texts</span>
-    <span class="badge badge-gold">2 Sections · 8 Tiers</span>
-    <span class="badge badge-gold">Click any entry to expand</span>
+    <span class="badge badge-gold">£250–£500 budget lens</span>
+    <span class="badge badge-blue">Courses · Books · Free tools</span>
+    <span class="badge badge-green">Practical first</span>
+    <span class="badge badge-red">Not a clinical treatment pathway</span>
   </div>
 </div>
 
 <main>
 
-<!-- ═══════════════════════════════════════════════
-     SECTION 1
-═══════════════════════════════════════════════ -->
-<div id="section-1" class="section-header section-s1">
+<div class="budget-panel">
+  <h2>Best first spend</h2>
+  <p>For a modest budget, prioritise one strong communication skillset, one safety baseline, and one shared measurement/reflection system.</p>
+  <ol>
+    <li><strong>Motivational Interviewing</strong> for resistance, ambivalence and autonomy-supportive coaching.</li>
+    <li><strong>Safeguarding and suicide/self-harm confidence</strong> so the team has clear thresholds and language.</li>
+    <li><strong>Free outcome and resource tools</strong> from CORC, YoungMinds, Charlie Waller and Anna Freud.</li>
+    <li><strong>A small practical book stack</strong> focused on conversations, behaviour, neurodiversity and adolescent development.</li>
+  </ol>
+</div>
+
+<!-- SECTION 1 -->
+<div id="section-1" class="section-header section-blue">
   <div class="section-num">Section 01</div>
-  <h2>Clinical Psychology,<br>Neurobiology &amp; Mentoring</h2>
-  <p class="section-desc">Ordered from biological substrate → theoretical framework → developmental context → applied tools. The tiers compound: each layer is built on the one before it.</p>
+  <h2>Core Practice Stack</h2>
+  <p class="section-desc">The highest-return layer: how to talk with young people without escalating resistance, how to avoid advice-dumping, and how to build motivation while preserving autonomy.</p>
 </div>
 
-<!-- TIER 1 -->
 <div class="tier">
-  <div class="tier-header">
-    <span class="tier-num">Tier 1</span>
-    <span class="tier-title">Biological &amp; Neurological Foundations</span>
-    <div class="tier-line"></div>
+  <div class="tier-header"><span class="tier-num">Tier 1</span><span class="tier-title">Motivational Interviewing · resistance, ambivalence and change talk</span><div class="tier-line"></div></div>
+
+  <div class="resource" data-num="01">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">01</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">Motivational Interviewing: Introductory Module</span><span class="tag tag-priority">buy first</span><span class="tag tag-course">course</span></div>
+        <div class="resource-author">Tavistock and Portman · CPD5</div>
+        <div class="resource-publisher">Online two-day training · practical skills focus</div>
+      </div>
+      <span class="resource-toggle">▾</span>
+    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Why this is the anchor</div><p>This is the most relevant single skill investment for your stated problem: resistance without power struggles, ambivalence, autonomy, change talk, and not falling into lectures or fixing. Use this as the professional benchmark, even if you later choose a cheaper MI route.</p><a class="resource-link" href="https://tavistockandportman.ac.uk/courses/motivational-interviewing-introductory-module-cpd5/" target="_blank" rel="noopener">View course</a></div></div>
   </div>
 
-  <div class="book" data-num="01">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">01</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">The Polyvagal Theory</span>
-
-        </div>
-        <div class="book-author">Stephen W. Porges · 2011</div>
-        <div class="book-publisher">W. W. Norton &amp; Company</div>
+  <div class="resource" data-num="02">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">02</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">Motivational Interviewing: Helping People Change</span><span class="tag tag-priority">core</span></div>
+        <div class="resource-author">William R. Miller &amp; Stephen Rollnick · latest edition</div>
+        <div class="resource-publisher">Guilford Press</div>
       </div>
-      <span class="book-toggle">▾</span>
+      <span class="resource-toggle">▾</span>
     </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is first</div>
-        <p>The single most foundational addition to this list. Polyvagal Theory explains why co-regulation works at a physiological level — neuroception, the vagal brake, the hierarchy of the autonomic nervous system. Your own regulation is not a soft skill; it is a biological instrument. Underpins everything Fonagy, Siegel, and Voss describe without knowing they are describing the same system.</p>
-      </div>
-    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Canonical base</div><p>The foundational MI text. Read for the spirit and structure: partnership, acceptance, compassion and evocation. The practical payoff is learning to stop arguing for change and instead draw out the young person's own reasons for change.</p></div></div>
   </div>
 
-  <div class="book" data-num="02">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">02</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Developmental Cognitive Neuroscience: An Introduction</span>
-        </div>
-        <div class="book-author">Mark H. Johnson &amp; Michelle de Haan · 2015 (4th ed.)</div>
-        <div class="book-publisher">Wiley-Blackwell</div>
+  <div class="resource" data-num="03">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">03</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">Motivational Interviewing with Adolescents and Young Adults</span><span class="tag tag-priority">core</span></div>
+        <div class="resource-author">Sylvie Naar &amp; Mariann Suarez · 2021 · 2nd ed.</div>
+        <div class="resource-publisher">Guilford Press</div>
       </div>
-      <span class="book-toggle">▾</span>
+      <span class="resource-toggle">▾</span>
     </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>The structural map of the developing brain from birth through adolescence. Foundational empirical neuroscience before clinical application. The "why" behind every clinical intervention with young people.</p>
-      </div>
-    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Youth-specific application</div><p>This brings MI into the developmental reality of teenagers and young adults: anti-authority stance, identity-protection, ambivalence, disengagement and shame. If you can only buy one MI book for adolescent work, make it this one.</p></div></div>
   </div>
 
-  <div class="book" data-num="03">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">03</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Rutter's Child and Adolescent Psychiatry</span>
-        </div>
-        <div class="book-author">Thapar, Pine, Leckman et al. (Eds.) · 2015 (6th ed.)</div>
-        <div class="book-publisher">John Wiley &amp; Sons</div>
+  <div class="resource" data-num="04">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">04</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">Motivational Interviewing in Schools</span><span class="tag tag-priority">core</span></div>
+        <div class="resource-author">Stephen Rollnick, Sebastian G. Kaplan &amp; Richard Rutschman · 2016</div>
+        <div class="resource-publisher">Guilford Publications</div>
       </div>
-      <span class="book-toggle">▾</span>
+      <span class="resource-toggle">▾</span>
     </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>The clinical reference standard. Dense and encyclopaedic — not a cover-to-cover read — but the authoritative empirical map of the full diagnostic and developmental landscape you work in. The benchmark against which all applied texts should be checked.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="04">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">04</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Inventing Ourselves: The Secret Life of the Teenage Brain</span>
-        </div>
-        <div class="book-author">Sarah-Jayne Blakemore · 2018</div>
-        <div class="book-publisher">PublicAffairs</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>Rutter translated for the practitioner. Blakemore bridges rigorous neuroscience into the lived experience of adolescence — risk-taking, identity, social sensitivity, peer influence. The most readable entry point to the empirical neuroscience of the cohort you mentor.</p>
-      </div>
-    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Education setting bridge</div><p>The most directly transferable MI text for alternative provision because it understands the school/education context: staff authority, behaviour expectations, attendance, learning barriers, and young people who are not voluntarily seeking help.</p></div></div>
   </div>
 </div>
 
-<!-- TIER 2 -->
 <div class="tier">
-  <div class="tier-header">
-    <span class="tier-num">Tier 2</span>
-    <span class="tier-title">Mentalization &amp; Psychodynamic Theory</span>
-    <div class="tier-line"></div>
+  <div class="tier-header"><span class="tier-num">Tier 2</span><span class="tier-title">Challenging behaviour without power struggles</span><div class="tier-line"></div></div>
+
+  <div class="resource" data-num="05">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">05</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">Lost at School</span><span class="tag tag-priority">buy first</span></div>
+        <div class="resource-author">Ross W. Greene · 2008</div>
+        <div class="resource-publisher">Scribner</div>
+      </div>
+      <span class="resource-toggle">▾</span>
+    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Alternative provision essential</div><p>Probably one of the most useful books for reframing behaviour in education. The core idea is simple and powerful: challenging behaviour is often the result of lagging skills and unsolved problems, not wilful defiance. Strongly complements MI.</p></div></div>
   </div>
 
-  <div class="book" data-num="05">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">05</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Affect Regulation, Mentalization, and the Development of the Self</span>
-        </div>
-        <div class="book-author">Fonagy, Gergely, Jurist &amp; Target · 2002</div>
-        <div class="book-publisher">Other Press</div>
+  <div class="resource" data-num="06">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">06</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">The Explosive Child</span><span class="tag tag-priority">practical</span></div>
+        <div class="resource-author">Ross W. Greene · latest edition</div>
+        <div class="resource-publisher">Harper</div>
       </div>
-      <span class="book-toggle">▾</span>
+      <span class="resource-toggle">▾</span>
     </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is first in tier</div>
-        <p>The canonical theoretical text. Fonagy at full theoretical depth — the developmental origins of mentalization, why affect regulation and reflective functioning are inseparable, and how early relational failures produce the clinical presentations you will have managed in NHS acute settings. Read before any of the applied Fonagy material.</p>
-      </div>
-    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Use for one-to-one formulation</div><p>More family-facing than Lost at School, but very useful for understanding escalation, rigidity, frustration tolerance, and collaborative problem solving. Good for mentors supporting young people who quickly enter fight/flight around demands.</p></div></div>
   </div>
 
-  <div class="book" data-num="06">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">06</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Inside Lives: Psychoanalysis and the Growth of the Personality</span>
-        </div>
-        <div class="book-author">Margot Waddell · 2002 (Rev. ed.)</div>
-        <div class="book-publisher">Karnac Books</div>
+  <div class="resource" data-num="07">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">07</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">PACE: Playfulness, Acceptance, Curiosity, Empathy</span><span class="tag tag-priority">core stance</span></div>
+        <div class="resource-author">Dan Hughes / DDP-informed resources</div>
+        <div class="resource-publisher">Attachment-informed communication approach</div>
       </div>
-      <span class="book-toggle">▾</span>
+      <span class="resource-toggle">▾</span>
     </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>The most accessible entry into object relations and Kleinian developmental theory. Where Fonagy gives you the empirical architecture, Waddell gives you the emotional phenomenology — what it feels like to be a developing person. Essential for understanding the adolescents you work with from the inside out.</p>
-      </div>
-    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">A usable relational stance</div><p>PACE is not just a theory. It gives mentors a simple behavioural posture for hard moments: stay warm, do not shame, get curious about the function of behaviour, and maintain connection while still holding boundaries.</p></div></div>
   </div>
 
-  <div class="book" data-num="07">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">07</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Multiple Voices: Narrative in Systemic Family Psychotherapy</span>
-        </div>
-        <div class="book-author">Renos K. Papadopoulos (Ed.) · 2001</div>
-        <div class="book-publisher">Routledge</div>
+  <div class="resource" data-num="08">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">08</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">How to Talk So Teens Will Listen and Listen So Teens Will Talk</span><span class="tag tag-priority">practical</span></div>
+        <div class="resource-author">Adele Faber &amp; Elaine Mazlish · 2005</div>
+        <div class="resource-publisher">HarperCollins</div>
       </div>
-      <span class="book-toggle">▾</span>
+      <span class="resource-toggle">▾</span>
     </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>Bridges psychodynamic theory into the systemic and narrative frame. Particularly relevant for inner city youth work where family systems are complex, fragmented, or adversarial. Sits between the Fonagy theoretical core and the applied AMBIT framework.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="08">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">08</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Adaptive Mentalization-Based Integrative Treatment (AMBIT)</span>
-        </div>
-        <div class="book-author">Bevington, Fuggle, Cracknell &amp; Fonagy · 2017</div>
-        <div class="book-publisher">Oxford University Press</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>Theory translated into a team-based, community-facing system of care. The most directly applicable clinical framework for working with hard-to-reach young people outside formal clinical settings — i.e., exactly what park-bench mentoring requires. Read Fonagy (2002) first.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="09">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">09</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Mentalization-Based Treatment for Adolescents: A Practical Guide</span>
-        </div>
-        <div class="book-author">Rossouw &amp; Fonagy · 2021</div>
-        <div class="book-publisher">American Psychiatric Association Publishing</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is last in tier</div>
-        <p>The most applied end of the Fonagy school. A practical clinical manual for MBT-A. Read last in this tier — it assumes the theory and system above.</p>
-      </div>
-    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Micro-skills</div><p>A very practical communication text. Useful for staff who do not need theory but do need better responses to defensiveness, sarcasm, refusal, embarrassment, anger, and shutdown.</p></div></div>
   </div>
 </div>
 
-<!-- TIER 3 -->
 <div class="tier">
-  <div class="tier-header">
-    <span class="tier-num">Tier 3</span>
-    <span class="tier-title">Youth Development, Adversity &amp; Context</span>
-    <div class="tier-line"></div>
+  <div class="tier-header"><span class="tier-num">Tier 3</span><span class="tier-title">Mentalizing and reflective team practice</span><div class="tier-line"></div></div>
+
+  <div class="resource" data-num="09">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">09</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">Introduction to Supporting Children and Families with MBT</span><span class="tag tag-course">course</span></div>
+        <div class="resource-author">Anna Freud · self-guided e-learning</div>
+        <div class="resource-publisher">Mentalization foundation for CYP, families, carers and teams</div>
+      </div>
+      <span class="resource-toggle">▾</span>
+    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Best MBT entry point</div><p>Good first step before heavier MBT training. The practical value is learning to notice when mentalizing collapses: when a young person, parent or staff member becomes certain, defensive, misread, shamed or reactive.</p><a class="resource-link" href="https://www.annafreud.org/training/courses/e-learning-introduction-to-supporting-children-and-families-with-mbt/" target="_blank" rel="noopener">View training</a></div></div>
   </div>
 
-  <div class="book" data-num="10">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">10</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Man's Search for Meaning</span>
-
-        </div>
-        <div class="book-author">Viktor E. Frankl · 1959</div>
-        <div class="book-publisher">Beacon Press</div>
+  <div class="resource" data-num="10">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">10</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">Adaptive Mentalization-Based Integrative Treatment</span><span class="tag tag-optional">deeper</span></div>
+        <div class="resource-author">Bevington, Fuggle, Cracknell &amp; Fonagy · 2017</div>
+        <div class="resource-publisher">Oxford University Press</div>
       </div>
-      <span class="book-toggle">▾</span>
+      <span class="resource-toggle">▾</span>
     </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is first in tier</div>
-        <p>Foundational before the others in this tier because it establishes the primary motivational question: why engage with anything at all? When a disengaged inner city adolescent has no reason to engage with life, logotherapy is not philosophy — it is the only framework that directly addresses the clinical obstacle. Meaning as the core human driver.</p>
-      </div>
-    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">For team systems</div><p>AMBIT is most useful when the work is community-facing, multi-agency, messy and relationship-based. It is less about individual therapy and more about how teams stay coordinated, reflective and adaptive around hard-to-reach young people.</p></div></div>
   </div>
 
-  <div class="book" data-num="11">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">11</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Mindset: The New Psychology of Success</span>
-
-        </div>
-        <div class="book-author">Carol S. Dweck · 2006</div>
-        <div class="book-publisher">Random House</div>
+  <div class="resource" data-num="11">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">11</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">Developing Reflective Practice and Supervision in Schools and Colleges</span><span class="tag tag-course">course</span></div>
+        <div class="resource-author">Anna Freud</div>
+        <div class="resource-publisher">Peer supervision and reflective practice setup</div>
       </div>
-      <span class="book-toggle">▾</span>
+      <span class="resource-toggle">▾</span>
     </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>The most glaring omission from the original list. Growth vs fixed mindset is the operational framework of effective youth mentoring — particularly with young people who have been institutionally designated as failures. The research is robust; the practical application is immediate.</p>
-      </div>
-    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Shared operating practice</div><p>Useful if the goal is team effectiveness rather than just personal reading. Reflective practice helps staff notice patterns, avoid reactive responses, and process emotionally difficult work without turning every problem into discipline or rescue.</p><a class="resource-link" href="https://www.annafreud.org/training/courses/reflective-practice-and-supervision-training/" target="_blank" rel="noopener">View course</a></div></div>
   </div>
 
-  <div class="book" data-num="12">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">12</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Scattered Minds: The Origins and Healing of Attention Deficit Disorder</span>
-
-        </div>
-        <div class="book-author">Gabor Maté · 2019</div>
-        <div class="book-publisher">Random House</div>
+  <div class="resource" data-num="12">
+    <div class="resource-header" onclick="toggleResource(this)">
+      <div class="resource-check" onclick="toggleComplete(event, this)"></div>
+      <span class="resource-num">12</span>
+      <div class="resource-meta">
+        <div class="resource-title-row"><span class="resource-title">CORC Outcome and Experience Measures</span><span class="tag tag-free">free</span></div>
+        <div class="resource-author">Child Outcomes Research Consortium</div>
+        <div class="resource-publisher">Feedback, goals and wellbeing measurement guidance</div>
       </div>
-      <span class="book-toggle">▾</span>
+      <span class="resource-toggle">▾</span>
     </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>Maté's central argument — that ADHD is substantially a developmental trauma response rather than a fixed neurodevelopmental trait — directly reframes how you approach the disengaged, dysregulated young people in your caseload. The NHS acute population and inner city London mentoring cohort have enormous ADHD-trauma overlap.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="13">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">13</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">The Boy Who Was Raised as a Dog</span>
-        </div>
-        <div class="book-author">Bruce D. Perry &amp; Maia Szalavitz · 2017 (Rev. ed.)</div>
-        <div class="book-publisher">Basic Books</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>Perry's Neurosequential Model of Therapeutics in narrative form. More developmentally focused than van der Kolk, more accessible than the clinical papers. Shows what developmental trauma looks like as a lived experience — essential for understanding your mentoring cohort's histories.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="14">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">14</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">How Children Succeed: Grit, Curiosity, and the Hidden Power of Character</span>
-
-        </div>
-        <div class="book-author">Paul Tough · 2012</div>
-        <div class="book-publisher">Houghton Mifflin Harcourt</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>Fills a structural gap nothing else on the list fills. Drawing on economics, neuroscience, and education research, Tough maps why disadvantaged young people succeed or fail. Less clinical than the Fonagy school, more structural. Essential for understanding why inner city mentoring is categorically different from suburban mentoring.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="15">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">15</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">iGen: Why Today's Super-Connected Kids Are Growing Up Less Rebellious, More Tolerant, Less Happy</span>
-
-        </div>
-        <div class="book-author">Jean M. Twenge · 2017</div>
-        <div class="book-publisher">Atria Books</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Specific to your profile</div>
-        <p>Your tech background means you will read Twenge's data differently to most practitioners — you understand what she's describing from the architecture side as well as the clinical side. The smartphone generation's anxiety, identity fragmentation, and attention patterns are the actual digital context your mentees are living inside. No other text on this list addresses this directly.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TIER 4 -->
-<div class="tier">
-  <div class="tier-header">
-    <span class="tier-num">Tier 4</span>
-    <span class="tier-title">Conversational Tooling &amp; Clinical Bridge</span>
-    <div class="tier-line"></div>
-  </div>
-
-  <div class="book" data-num="16">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">16</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Narrative Means to Therapeutic Ends</span>
-        </div>
-        <div class="book-author">Michael White &amp; David Epston · 1990</div>
-        <div class="book-publisher">W. W. Norton &amp; Company</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>The foundational text of narrative therapy. Externalisation of problems, re-authoring conversations, and the therapeutic use of story sit at the heart of effective youth work and connect directly to the systemic-narrative layer in Papadopoulos above.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="17">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">17</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Motivational Interviewing with Adolescents and Young Adults</span>
-        </div>
-        <div class="book-author">Naar &amp; Suarez · 2021 (2nd ed.)</div>
-        <div class="book-publisher">Guilford Press</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this over Miller &amp; Rollnick's original</div>
-        <p>This adaptation is built specifically for developmental resistance in youth — the ambivalence, the identity investment in non-change, the anti-authority stance. Preferred over the canonical original text for your context because you are mentoring teenagers, not adults in addiction services.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="18">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">18</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Motivational Interviewing in Schools</span>
-        </div>
-        <div class="book-author">Rollnick, Kaplan &amp; Rutschman · 2016</div>
-        <div class="book-publisher">Guilford Publications</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>The most specific application of MI to the environments your mentees actually inhabit. Pairs with Naar &amp; Suarez to give you the full MI toolkit for adolescent work in non-clinical settings.</p>
-      </div>
-    </div>
+    <div class="resource-body"><div class="resource-why"><div class="resource-why-label">Track whether the work helps</div><p>Use this lightly: goal-based outcomes, session feedback, wellbeing trends and young-person voice. In alternative provision, the most useful measures are often simple: attendance, engagement, self-defined goals, confidence, felt safety and next-step progress.</p><a class="resource-link" href="https://www.corc.uk.net/outcome-measures-guidance/" target="_blank" rel="noopener">View measures</a></div></div>
   </div>
 </div>
 
 <hr class="section-divider">
 
-<!-- ═══════════════════════════════════════════════
-     SECTION 2
-═══════════════════════════════════════════════ -->
-<div id="section-2" class="section-header section-s2">
+<!-- SECTION 2 -->
+<div id="section-2" class="section-header section-gold">
   <div class="section-num">Section 02</div>
-  <h2>Persuasion, Negotiation<br>&amp; Charisma</h2>
-  <p class="section-desc">Ordered architecturally — theoretical neuroscience and psychology first, tactical frameworks second, applied behaviours third, power dynamics last. The theory makes the tactics legible; the tactics make the theory usable.</p>
+  <h2>Adolescence, Neurodiversity<br>&amp; Development</h2>
+  <p class="section-desc">The context layer: how teenagers think, how school exclusion and shame affect motivation, and how neurodivergent young people can be misunderstood in education settings.</p>
 </div>
 
-<!-- TIER 5 -->
 <div class="tier">
-  <div class="tier-header">
-    <span class="tier-num">Tier 1</span>
-    <span class="tier-title">The Architecture of Human Decision-Making</span>
-    <div class="tier-line"></div>
-  </div>
+  <div class="tier-header"><span class="tier-num">Tier 1</span><span class="tier-title">Teenage development and emotional life</span><div class="tier-line"></div></div>
 
-  <div class="book" data-num="19">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">19</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Thinking, Fast and Slow</span>
-        </div>
-        <div class="book-author">Daniel Kahneman · 2011</div>
-        <div class="book-publisher">Farrar, Straus and Giroux</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is first in section</div>
-        <p>The canonical foundation. System 1 vs System 2 is the theoretical architecture on which every tactical persuasion framework in this section is built. Ariely, Cialdini, Voss, and Klaff are all operating inside the framework Kahneman describes. Read this first and the rest of the section becomes a practical field manual for a single unified theory.</p>
-      </div>
-    </div>
-  </div>
+  <div class="resource" data-num="13"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">13</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Brainstorm</span><span class="tag tag-priority">read early</span></div><div class="resource-author">Daniel J. Siegel · 2013</div><div class="resource-publisher">TarcherPerigee</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Accessible adolescent brain map</div><p>A practical bridge between neuroscience and the lived reality of adolescence. More shareable with colleagues than dense clinical texts, and useful for explaining why risk, identity, peer status and emotional intensity matter so much.</p></div></div></div>
 
-  <div class="book" data-num="20">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">20</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Predictably Irrational: The Hidden Forces That Shape Our Decisions</span>
+  <div class="resource" data-num="14"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">14</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Inventing Ourselves: The Secret Life of the Teenage Brain</span><span class="tag tag-priority">strong</span></div><div class="resource-author">Sarah-Jayne Blakemore · 2018</div><div class="resource-publisher">PublicAffairs</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Evidence-based adolescent neuroscience</div><p>Excellent for understanding social sensitivity, identity, peer influence, risk and learning during adolescence. More empirical than many popular youth-development books.</p></div></div></div>
 
-        </div>
-        <div class="book-author">Dan Ariely · 2008</div>
-        <div class="book-publisher">HarperCollins</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>Where Kahneman is the architecture, Ariely is the field manual. Shows exactly how irrationality operates in pricing, social norms, expectations, and daily decisions — with experiments immediately generalisable to sales, negotiation, and influence. More tactically applied than Kahneman.</p>
-      </div>
-    </div>
-  </div>
+  <div class="resource" data-num="15"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">15</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">The Emotional Lives of Teenagers</span><span class="tag tag-priority">practical</span></div><div class="resource-author">Lisa Damour · 2023</div><div class="resource-publisher">Atlantic / Ballantine</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Very usable for staff language</div><p>Good for translating adolescent distress into normal, practical language. Useful for mentors who need to validate feelings without over-clinicalising normal teenage development.</p></div></div></div>
 
-  <div class="book" data-num="21">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">21</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">The Righteous Mind: Why Good People Are Divided by Politics and Religion</span>
-
-        </div>
-        <div class="book-author">Jonathan Haidt · 2012</div>
-        <div class="book-publisher">Pantheon Books</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">The single biggest gap in the original list</div>
-        <p>Cialdini tells you how to influence; Kahneman tells you why people are irrational; Haidt tells you why people hold the values they hold. Moral foundations theory is the most powerful persuasion framework that was missing. Essential for cross-cultural, cross-class influence — which inner city London work and commercial negotiations both require constantly.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="22">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">22</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Influence: The Psychology of Persuasion</span>
-        </div>
-        <div class="book-author">Robert B. Cialdini · 1984</div>
-        <div class="book-publisher">Harper Business</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>The applied translation of the Kahneman framework into six universal principles: reciprocity, commitment, social proof, authority, liking, scarcity. The most empirically grounded tactical persuasion text in existence. Read after Kahneman and Ariely — the principles land with greater force once you understand the cognitive architecture they exploit.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="23">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">23</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Pre-Suasion: A Revolutionary Way to Influence and Persuade</span>
-        </div>
-        <div class="book-author">Robert B. Cialdini · 2016</div>
-        <div class="book-publisher">Simon &amp; Schuster</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this follows Influence</div>
-        <p>Influence maps the six principles. Pre-Suasion covers the moment before the ask — how environmental and contextual priming determines receptivity before a word is spoken. The natural sequel; read immediately after Influence.</p>
-      </div>
-    </div>
-  </div>
+  <div class="resource" data-num="16"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">16</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Untangled</span><span class="tag tag-optional">optional</span></div><div class="resource-author">Lisa Damour · 2016</div><div class="resource-publisher">Ballantine Books</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Developmental map</div><p>Written around girls' development, but many of the ideas are useful for understanding autonomy, identity, peer dynamics, emotional intensity and adult-young person conflict.</p></div></div></div>
 </div>
 
-<!-- TIER 6 -->
 <div class="tier">
-  <div class="tier-header">
-    <span class="tier-num">Tier 2</span>
-    <span class="tier-title">High-Stakes Negotiation · Tactical Empathy</span>
-    <div class="tier-line"></div>
-  </div>
+  <div class="tier-header"><span class="tier-num">Tier 2</span><span class="tier-title">Neurodiversity, unmet needs and school belonging</span><div class="tier-line"></div></div>
 
-  <div class="book" data-num="24">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">24</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Getting to Yes: Negotiating Agreement Without Giving In</span>
-        </div>
-        <div class="book-author">Roger Fisher &amp; William Ury · 1981</div>
-        <div class="book-publisher">Penguin Books</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is first</div>
-        <p>The academic gold standard and canonical starting point. Principled negotiation — separating the person from the problem, focusing on underlying interests rather than stated positions — is the foundational theory. Read before Getting Past No and Never Split the Difference, both of which are responses to situations this book assumes away.</p>
-      </div>
-    </div>
-  </div>
+  <div class="resource" data-num="17"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">17</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Neurodiversity and Wellbeing in Schools</span><span class="tag tag-free">free / check eligibility</span><span class="tag tag-course">course</span></div><div class="resource-author">Anna Freud</div><div class="resource-publisher">Autism, ADHD, AuDHD, wellbeing and school belonging</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Directly relevant to alternative provision</div><p>Use this to strengthen understanding of attendance difficulties, misunderstood behaviour, social exhaustion, sensory stress, masking and the emotional cost of school environments for neurodivergent young people.</p><a class="resource-link" href="https://www.annafreud.org/news/new-training-launched-to-support-neurodivergent-students/" target="_blank" rel="noopener">View programme</a></div></div></div>
 
-  <div class="book" data-num="25">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">25</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Getting Past No: Negotiating in Difficult Situations</span>
+  <div class="resource" data-num="18"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">18</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Scattered Minds</span><span class="tag tag-optional">use critically</span></div><div class="resource-author">Gabor Maté · latest edition</div><div class="resource-publisher">Vintage / Vermilion</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">ADHD and developmental context</div><p>Useful for thinking about attention, emotion and environment, but do not use it as a replacement for mainstream ADHD guidance. Best read as a reflective lens, not as the final word on ADHD.</p></div></div></div>
 
-        </div>
-        <div class="book-author">William Ury · 1991</div>
-        <div class="book-publisher">Bantam Books</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>The field manual for when the other side refuses, stalls, or attacks — the tactical counterpart to the theoretical framework in Getting to Yes. More practically useful in adversarial or emotionally charged negotiations. Bridges directly into the silver tongue skillset.</p>
-      </div>
-    </div>
-  </div>
+  <div class="resource" data-num="19"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">19</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">YoungMinds Professional Resources</span><span class="tag tag-free">free</span></div><div class="resource-author">YoungMinds</div><div class="resource-publisher">Worksheets, activities, posters and professional guidance</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Practical and shareable</div><p>Useful for one-to-one mentoring, group activities and staff refreshers. Prioritise resources on conversations, feelings, behaviour, positive mental health, youth voice and practical wellbeing activities.</p><a class="resource-link" href="https://www.youngminds.org.uk/professional/resources/" target="_blank" rel="noopener">View resources</a></div></div></div>
 
-  <div class="book" data-num="26">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">26</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Never Split the Difference</span>
-        </div>
-        <div class="book-author">Chris Voss &amp; Tahl Raz · 2016</div>
-        <div class="book-publisher">HarperBusiness</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is last in tier</div>
-        <p>Clinical psychology tools weaponised for negotiation — mirroring, labelling, dynamic silence, calibrated questions. The most tactically dense text in this tier. Read last; it assumes and extends everything Fisher, Ury, Kahneman, and Cialdini establish.</p>
-      </div>
-    </div>
-  </div>
+  <div class="resource" data-num="20"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">20</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Charlie Waller Webinars and Resource Library</span><span class="tag tag-free">free</span></div><div class="resource-author">Charlie Waller Trust</div><div class="resource-publisher">Evidence-informed mental health resources for education settings</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Best free CPD layer</div><p>Good for low-budget CPD, especially if you want mental health knowledge that is practical but not overly clinical. Use webinars selectively: self-harm, suicide, anxiety, sleep, exam stress, and supporting conversations.</p><a class="resource-link" href="https://charliewaller.org/mental-health-training-support/mental-health-webinars" target="_blank" rel="noopener">View webinars</a></div></div></div>
 </div>
 
-<!-- TIER 7 -->
-<div class="tier">
-  <div class="tier-header">
-    <span class="tier-num">Tier 3</span>
-    <span class="tier-title">Charisma, Frame Control &amp; Micro-Behaviour</span>
-    <div class="tier-line"></div>
-  </div>
+<hr class="section-divider">
 
-  <div class="book" data-num="27">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">27</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">How to Win Friends and Influence People</span>
-
-        </div>
-        <div class="book-author">Dale Carnegie · 1936</div>
-        <div class="book-publisher">Simon &amp; Schuster</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is first in tier</div>
-        <p>The list had strong theoretical architecture and was missing the micro-behavioural layer entirely. Carnegie operates at the level of specific conversational moves — genuine interest, active listening, remembering names, letting people feel heard — that Cialdini and Voss assume you already possess. Read before Cabane and Klaff; the higher-level frameworks land better when the foundations are explicit.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="28">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">28</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">The Charisma Myth</span>
-        </div>
-        <div class="book-author">Olivia Fox Cabane · 2012</div>
-        <div class="book-publisher">Portfolio / Penguin</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>Charisma decomposed into three learnable components — Presence, Power, and Warmth — and rebuilt as a practical behavioural system. Removes the mythology from magnetism. The natural bridge from Carnegie's micro-behaviours into Klaff's higher-order frame control.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="book" data-num="29">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">29</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">Pitch Anything</span>
-        </div>
-        <div class="book-author">Oren Klaff · 2011</div>
-        <div class="book-publisher">McGraw-Hill</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is last in tier</div>
-        <p>Frame control at the neurological level. Most pitches fail because they address the neocortex; all information is filtered first by the amygdala. Klaff's STRONG framework teaches you to win the neurological filter before logic enters. Read last in this tier — requires the micro-behavioural and charisma foundations to execute properly.</p>
-      </div>
-    </div>
-  </div>
+<!-- SECTION 3 -->
+<div id="section-3" class="section-header section-red">
+  <div class="section-num">Section 03</div>
+  <h2>Safeguarding, Self-Harm<br>&amp; Risk Confidence</h2>
+  <p class="section-desc">Not because the provision is primarily clinical, but because education staff still need a safe, shared response when risk appears. The aim is clarity, boundaries and escalation — not therapy.</p>
 </div>
 
-<!-- TIER 8 -->
 <div class="tier">
-  <div class="tier-header">
-    <span class="tier-num">Tier 4</span>
-    <span class="tier-title">Power, Dark Arts &amp; Practitioner Regulation</span>
-    <div class="tier-line"></div>
-  </div>
+  <div class="tier-header"><span class="tier-num">Tier 1</span><span class="tier-title">Baseline safety and escalation</span><div class="tier-line"></div></div>
 
-  <div class="book" data-num="30">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">30</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">The Art of Being Right (Eristic Dialectic)</span>
+  <div class="resource" data-num="21"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">21</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Introduction to Safeguarding and Child Protection</span><span class="tag tag-safety">safety</span><span class="tag tag-course">course</span></div><div class="resource-author">NSPCC Learning</div><div class="resource-publisher">Online / face-to-face safeguarding basics</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Non-negotiable baseline</div><p>Use this as a shared minimum for recognising, responding, recording and reporting concerns. Especially useful if mentors, tutors and workshop staff have varied levels of prior safeguarding exposure.</p><a class="resource-link" href="https://learning.nspcc.org.uk/training/introduction-safeguarding-child-protection" target="_blank" rel="noopener">View training</a></div></div></div>
 
-        </div>
-        <div class="book-author">Arthur Schopenhauer · c.1831 (posthumous)</div>
-        <div class="book-publisher">Various editions</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is first in tier</div>
-        <p>Fundamentally about epistemology and argumentation — the mechanics of how people win disputes regardless of truth. Thirty-eight stratagems for argument. Essential for frame control: both for deploying these tactics and, critically, for recognising when they are being used on you. The dark arts companion on logic and rhetoric.</p>
-      </div>
-    </div>
-  </div>
+  <div class="resource" data-num="22"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">22</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">County Lines Safeguarding Training</span><span class="tag tag-safety">safety</span><span class="tag tag-course">course</span></div><div class="resource-author">NSPCC Learning</div><div class="resource-publisher">Child criminal exploitation and grooming awareness</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Context-sensitive risk</div><p>Highly relevant where exclusion, vulnerability, missing episodes, coercion, peer pressure and criminal exploitation may overlap. This is worth considering even if the day-to-day service is educational.</p><a class="resource-link" href="https://learning.nspcc.org.uk/training/county-lines-training" target="_blank" rel="noopener">View training</a></div></div></div>
 
-  <div class="book" data-num="31">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">31</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">The 48 Laws of Power</span>
-        </div>
-        <div class="book-author">Robert Greene · 1998</div>
-        <div class="book-publisher">Viking Press</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is here</div>
-        <p>The translation layer that makes the primary historical sources redundant for a practitioner. Greene synthesises thousands of years of power strategy into modern, applicable laws. Ruthless, amoral, and essential for reading the subtext of office politics, commercial negotiations, and personal branding. Read after Schopenhauer — the laws land with greater force once you understand the dialectical mechanics underneath them.</p>
-      </div>
-    </div>
-  </div>
+  <div class="resource" data-num="23"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">23</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Spark / Speak / ASIST Suicide Prevention Training</span><span class="tag tag-safety">safety</span><span class="tag tag-course">course</span></div><div class="resource-author">PAPYRUS</div><div class="resource-publisher">From introductory awareness to two-day intervention training</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Confidence for hard conversations</div><p>Start with Spark or Speak unless your role routinely carries higher risk. The practical outcome should be simple: recognise signs, ask clearly, keep safe, record, escalate, and follow the organisation's safeguarding procedure.</p><a class="resource-link" href="https://www.papyrus-uk.org/training-and-resources/training" target="_blank" rel="noopener">View training</a></div></div></div>
 
-  <div class="book" data-num="32">
-    <div class="book-header" onclick="toggleBook(this)">
-      <div class="book-check" onclick="toggleRead(event, this)"></div>
-      <span class="book-num">32</span>
-      <div class="book-meta">
-        <div class="book-title-row">
-          <span class="book-title">The Obstacle Is the Way</span>
+  <div class="resource" data-num="24"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">24</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Self-Harm: Assessment, Management and Preventing Recurrence</span><span class="tag tag-free">free</span><span class="tag tag-safety">guidance</span></div><div class="resource-author">NICE Guideline NG225</div><div class="resource-publisher">Reference guidance for policy and escalation pathway</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">For procedure, not casual reading</div><p>Use this to sense-check organisational pathways and staff briefings. It is not a mentoring manual, but it helps avoid unsafe myths and inconsistent responses around self-harm.</p><a class="resource-link" href="https://www.nice.org.uk/guidance/ng225" target="_blank" rel="noopener">View guidance</a></div></div></div>
+</div>
 
-        </div>
-        <div class="book-author">Ryan Holiday · 2014</div>
-        <div class="book-publisher">Portfolio / Penguin</div>
-      </div>
-      <span class="book-toggle">▾</span>
-    </div>
-    <div class="book-body">
-      <div class="book-why">
-        <div class="book-why-label">Why this is last on the entire list</div>
-        <p>The regulation framework for practitioners operating in high-stakes environments. Stoic philosophy stripped of academic weight and rebuilt as a field manual for adversity. The discipline of non-reaction, the reframing of obstacles as material, the acceptance of what cannot be controlled. Everything Porges describes neurologically, the Stoics described philosophically. Read when the rest of the list is complete.</p>
-      </div>
-    </div>
-  </div>
+<div class="tier">
+  <div class="tier-header"><span class="tier-num">Tier 2</span><span class="tier-title">Trauma-aware, without over-clinicalising the provision</span><div class="tier-line"></div></div>
+
+  <div class="resource" data-num="25"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">25</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">UK Trauma Council Resources</span><span class="tag tag-free">free</span></div><div class="resource-author">UK Trauma Council / Anna Freud</div><div class="resource-publisher">Evidence-informed trauma resources for CYP contexts</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Use as a reference layer</div><p>Trauma may not be the headline of your work, but it is often in the background. Use this to avoid overreacting, underreacting, or turning every dysregulated response into a discipline issue.</p><a class="resource-link" href="https://www.annafreud.org/get-involved/networks/uk-trauma-council/" target="_blank" rel="noopener">View resources</a></div></div></div>
+
+  <div class="resource" data-num="26"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">26</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Using Stories to Build Bridges with Traumatized Children</span><span class="tag tag-optional">practical</span></div><div class="resource-author">Kim S. Golding</div><div class="resource-publisher">Jessica Kingsley Publishers</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Narrative and connection</div><p>Practical and non-threatening. Useful for building language, metaphor and connection with young people who struggle to talk directly about themselves or their behaviour.</p></div></div></div>
+
+  <div class="resource" data-num="27"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">27</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">The Boy Who Was Raised as a Dog</span><span class="tag tag-optional">background</span></div><div class="resource-author">Bruce D. Perry &amp; Maia Szalavitz · revised edition</div><div class="resource-publisher">Basic Books</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Background empathy</div><p>Not the first thing to buy for your specific brief, but helpful for understanding developmental trauma and why some young people respond to ordinary demands as if they are threats.</p></div></div></div>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION 4 -->
+<div id="section-4" class="section-header section-purple">
+  <div class="section-num">Section 04</div>
+  <h2>Deeper Practice<br>&amp; Defensive Influence Literacy</h2>
+  <p class="section-desc">Useful once the core practice stack is in place. These resources deepen mentalization, narrative work, coaching and influence literacy — but they should not displace MI, safeguarding or reflective practice.</p>
+</div>
+
+<div class="tier">
+  <div class="tier-header"><span class="tier-num">Tier 1</span><span class="tier-title">Narrative, coaching and meaning</span><div class="tier-line"></div></div>
+
+  <div class="resource" data-num="28"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">28</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Narrative Means to Therapeutic Ends</span><span class="tag tag-optional">deeper</span></div><div class="resource-author">Michael White &amp; David Epston · 1990</div><div class="resource-publisher">W. W. Norton &amp; Company</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Identity and story</div><p>Useful for helping young people separate themselves from the problem: “I am not the failure; I am someone who has had repeated experiences of failing in this system.” Best read after you have some MI grounding.</p></div></div></div>
+
+  <div class="resource" data-num="29"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">29</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">The Coaching Habit</span><span class="tag tag-priority">practical</span></div><div class="resource-author">Michael Bungay Stanier · 2016</div><div class="resource-publisher">Box of Crayons Press</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Anti-advice-dumping</div><p>A short, practical coaching book that trains the habit of asking better questions instead of jumping straight to advice. Very compatible with MI and mentoring.</p></div></div></div>
+
+  <div class="resource" data-num="30"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">30</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Man's Search for Meaning</span><span class="tag tag-optional">meaning</span></div><div class="resource-author">Viktor E. Frankl · 1959</div><div class="resource-publisher">Beacon Press</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Purpose and motivation</div><p>Not a youth-work manual, but useful for thinking about meaning, agency and why a young person might engage with education, skills or future planning at all.</p></div></div></div>
+
+  <div class="resource" data-num="31"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">31</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Mindset</span><span class="tag tag-optional">use carefully</span></div><div class="resource-author">Carol S. Dweck · 2006</div><div class="resource-publisher">Random House</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Learning and failure</div><p>Useful for language around learning, practice and failure, but avoid using “growth mindset” as a slogan. In alternative provision, mindset work must be paired with real support, safety, skill-building and credible success experiences.</p></div></div></div>
+</div>
+
+<div class="tier">
+  <div class="tier-header"><span class="tier-num">Tier 2</span><span class="tier-title">Influence literacy, kept ethically bounded</span><div class="tier-line"></div></div>
+
+  <div class="resource" data-num="32"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">32</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Influence: The Psychology of Persuasion</span><span class="tag tag-optional">defensive literacy</span></div><div class="resource-author">Robert B. Cialdini · latest edition</div><div class="resource-publisher">Harper Business</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Understand influence, do not weaponise it</div><p>Useful for recognising social proof, authority, scarcity and commitment pressures in systems. In youth mentoring, this belongs behind autonomy and consent: understand influence so you can avoid manipulation.</p></div></div></div>
+
+  <div class="resource" data-num="33"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">33</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">Never Split the Difference</span><span class="tag tag-optional">use carefully</span></div><div class="resource-author">Chris Voss &amp; Tahl Raz · 2016</div><div class="resource-publisher">Harper Business</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Selective use only</div><p>Mirroring, labelling and calibrated questions can be useful. But do not make “winning the negotiation” the frame for youth work. Use only the parts that support listening, de-escalation and clarity.</p></div></div></div>
+
+  <div class="resource" data-num="34"><div class="resource-header" onclick="toggleResource(this)"><div class="resource-check" onclick="toggleComplete(event, this)"></div><span class="resource-num">34</span><div class="resource-meta"><div class="resource-title-row"><span class="resource-title">The Obstacle Is the Way</span><span class="tag tag-optional">self-regulation</span></div><div class="resource-author">Ryan Holiday · 2014</div><div class="resource-publisher">Portfolio / Penguin</div></div><span class="resource-toggle">▾</span></div><div class="resource-body"><div class="resource-why"><div class="resource-why-label">Practitioner regulation</div><p>A lightweight personal regulation text. Useful for staying steady under frustration, rejection and slow progress — but secondary to reflective supervision and good organisational support.</p></div></div></div>
 </div>
 
 </main>
 
 <footer>
+  <p>Built as a practical-first toolkit for alternative provision mentoring.</p>
+  <p>Track completion locally in this browser.</p>
 </footer>
 
 <script>
-  // Toggle book expand/collapse
-  function toggleBook(header) {
-    const book = header.closest('.book');
-    book.classList.toggle('is-open');
+  function toggleResource(header) {
+    const resource = header.closest('.resource');
+    resource.classList.toggle('is-open');
   }
 
-  // Toggle read/unread
-  function toggleRead(e, checkEl) {
+  function toggleComplete(e, checkEl) {
     e.stopPropagation();
-    const book = checkEl.closest('.book');
-    book.classList.toggle('is-read');
+    const resource = checkEl.closest('.resource');
+    resource.classList.toggle('is-complete');
     updateCounter();
     saveState();
   }
 
-  // Update counter
   function updateCounter() {
-    const total = document.querySelectorAll('.book').length;
-    const read = document.querySelectorAll('.book.is-read').length;
-    document.getElementById('counter').textContent = `${read} / ${total} read`;
+    const total = document.querySelectorAll('.resource').length;
+    const complete = document.querySelectorAll('.resource.is-complete').length;
+    document.getElementById('counter').textContent = `${complete} / ${total} complete`;
   }
 
-  // Progress bar
   window.addEventListener('scroll', () => {
     const doc = document.documentElement;
     const scrollTop = doc.scrollTop || document.body.scrollTop;
@@ -1316,36 +898,34 @@
     document.getElementById('progress-bar').style.width = progress + '%';
   });
 
-  // Persist state in localStorage
   function saveState() {
     const state = {};
-    document.querySelectorAll('.book').forEach(b => {
-      state[b.dataset.num] = b.classList.contains('is-read');
+    document.querySelectorAll('.resource').forEach(r => {
+      state[r.dataset.num] = r.classList.contains('is-complete');
     });
-    try { localStorage.setItem('readingList', JSON.stringify(state)); } catch(e) {}
+    try { localStorage.setItem('apMentorToolkitState', JSON.stringify(state)); } catch(e) {}
   }
 
   function loadState() {
     try {
-      const state = JSON.parse(localStorage.getItem('readingList') || '{}');
-      document.querySelectorAll('.book').forEach(b => {
-        if (state[b.dataset.num]) b.classList.add('is-read');
+      const state = JSON.parse(localStorage.getItem('apMentorToolkitState') || '{}');
+      document.querySelectorAll('.resource').forEach(r => {
+        if (state[r.dataset.num]) r.classList.add('is-complete');
       });
     } catch(e) {}
     updateCounter();
   }
 
-  // Staggered entrance animations
-  function animateBooks() {
-    const books = document.querySelectorAll('.book');
-    books.forEach((book, i) => {
-      book.style.animationDelay = `${i * 0.03}s`;
+  function animateResources() {
+    const resources = document.querySelectorAll('.resource');
+    resources.forEach((resource, i) => {
+      resource.style.animationDelay = `${i * 0.025}s`;
     });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     loadState();
-    animateBooks();
+    animateResources();
   });
 </script>
 </body>
