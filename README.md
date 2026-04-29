@@ -1,435 +1,585 @@
-# 📚 Master Reading List
+# 🧭 Alternative Provision Mentor Toolkit
 
-![Status](https://img.shields.io/badge/status-active-brightgreen) ![Sections](https://img.shields.io/badge/sections-2-blue) ![Books](https://img.shields.io/badge/books-32-orange) [![Website](https://img.shields.io/badge/view-website-gold)](https://smcallan.github.io/ReadingLIST/)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Focus](https://img.shields.io/badge/focus-alternative%20provision-gold)
+![Sections](https://img.shields.io/badge/sections-4-blue)
+![Resources](https://img.shields.io/badge/resources-34-orange)
+![Budget](https://img.shields.io/badge/budget-%C2%A3250%E2%80%93%C2%A3500-green)
+[![Website](https://img.shields.io/badge/view-website-gold)](https://smcallan.github.io/ReadingLIST/)
 
-> **Overview**
-> A curated practitioner's toolkit spanning clinical psychology, mentalization, neurobiology, and the behavioral science of influence. Built for an experienced NHS clinician bridging into adolescent mentoring and high-level persuasion.
+> **Overview**  
+> A practical-first resource stack for adolescent mentoring, alternative education, wellbeing support, communication, safeguarding and reflective practice.
 >
-> Ordered **canonically** — foundational theory first, applied practice last. Read in sequence for maximum compounding.
+> This is **not** a clinical treatment curriculum. The primary setting is alternative provision: workshops, practical education, skills-building and one-to-one mentoring. The wellbeing layer exists to improve engagement, safety, trust, confidence, motivation and service outcomes.
+>
+> The toolkit is built around one central question:
+>
+> **What helps a mentor work more effectively with young people who are resistant, ambivalent, disengaged, defensive, overwhelmed or hard to reach?**
+
+---
+
+## 🎯 Professional stance
+
+This toolkit is guided by five operating principles:
+
+| Principle | Not |
+|---|---|
+| **Engagement** | persuasion |
+| **Autonomy** | compliance |
+| **Curiosity** | frame control |
+| **Safeguarding** | winning |
+| **Empowerment** | tactical advantage |
+
+The aim is to improve professional practice without turning youth work, mentoring or alternative education into therapy.
+
+---
+
+## 💷 Budget lens
+
+This list is designed around a modest development budget of roughly:
+
+> **£250–£500**
+
+The highest-value spend is likely to be:
+
+1. **Motivational Interviewing** training or books  
+2. **Safeguarding / self-harm / suicide prevention confidence**
+3. **Practical behaviour and communication resources**
+4. **Free professional resources from trusted youth mental health organisations**
+5. **Outcome tracking and reflective practice tools**
+
+The aim is to build one practitioner’s skillset first, while choosing resources that can also influence the wider team.
 
 ---
 
 ## 📖 Table of Contents
 
-- [Section 1 — Clinical Psychology, Neurobiology & Mentoring](#-section-1-clinical-psychology-neurobiology--mentoring)
-  - [Tier 1: Biological & Neurological Foundations](#tier-1-biological--neurological-foundations)
-  - [Tier 2: Mentalization & Psychodynamic Theory](#tier-2-mentalization--psychodynamic-theory)
-  - [Tier 3: Youth Development, Adversity & Context](#tier-3-youth-development-adversity--context)
-  - [Tier 4: Conversational Tooling & Clinical Bridge](#tier-4-conversational-tooling--clinical-bridge)
-- [Section 2 — Persuasion, Negotiation & Charisma](#️-section-2-persuasion-negotiation--charisma)
-  - [Tier 1: The Architecture of Human Decision-Making](#tier-1-the-architecture-of-human-decision-making)
-  - [Tier 2: High-Stakes Negotiation](#tier-2-high-stakes-negotiation-tactical-empathy)
-  - [Tier 3: Charisma, Frame Control & Micro-Behaviour](#tier-3-charisma-frame-control--micro-behaviour)
-  - [Tier 4: Power, Dark Arts & Regulation](#tier-4-power-dark-arts--practitioner-regulation)
+- [Section 1 — Core Practice Stack](#-section-1-core-practice-stack)
+  - [Tier 1: Motivational Interviewing](#tier-1-motivational-interviewing)
+  - [Tier 2: Challenging Behaviour Without Power Struggles](#tier-2-challenging-behaviour-without-power-struggles)
+  - [Tier 3: Mentalizing and Reflective Team Practice](#tier-3-mentalizing-and-reflective-team-practice)
+- [Section 2 — Adolescence, Neurodiversity & Development](#-section-2-adolescence-neurodiversity--development)
+  - [Tier 1: Teenage Development and Emotional Life](#tier-1-teenage-development-and-emotional-life)
+  - [Tier 2: Neurodiversity, Unmet Needs and School Belonging](#tier-2-neurodiversity-unmet-needs-and-school-belonging)
+- [Section 3 — Safeguarding, Self-Harm & Risk Confidence](#-section-3-safeguarding-self-harm--risk-confidence)
+  - [Tier 1: Baseline Safety and Escalation](#tier-1-baseline-safety-and-escalation)
+  - [Tier 2: Trauma-Aware Without Over-Clinicalising](#tier-2-trauma-aware-without-over-clinicalising)
+- [Section 4 — Deeper Practice & Defensive Influence Literacy](#-section-4-deeper-practice--defensive-influence-literacy)
+  - [Tier 1: Narrative, Coaching and Meaning](#tier-1-narrative-coaching-and-meaning)
+  - [Tier 2: Influence Literacy, Ethically Bounded](#tier-2-influence-literacy-ethically-bounded)
+- [Suggested First Purchase Stack](#-suggested-first-purchase-stack)
 - [Quick Checklist](#-quick-checklist)
 
 ---
 
-## 🧠 Section 1: Clinical Psychology, Neurobiology & Mentoring
+# 🧩 Section 1: Core Practice Stack
 
-> Ordered from **biological substrate → theoretical framework → developmental context → applied tools**.
-> The tiers compound: each layer is built on the one before it.
-
----
-
-### Tier 1: Biological & Neurological Foundations
-*The substrate everything else sits on. The body before the mind, the nervous system before the relationship.*
+> The highest-return layer: how to talk with young people without escalating resistance, how to avoid advice-dumping, and how to build motivation while preserving autonomy.
 
 ---
 
-#### 1. Porges, S. W. (2011) — *The Polyvagal Theory* 🆕
-**Norton Series on Interpersonal Neurobiology — W. W. Norton & Company**
+## Tier 1: Motivational Interviewing
 
-> The single most foundational addition to this list. Polyvagal Theory explains *why* co-regulation works at a physiological level — neuroception, the vagal brake, the hierarchy of the autonomic nervous system. Your own regulation is not a soft skill; it is a biological instrument. This text explains the mechanism. Underpins everything Fonagy, Porges, Siegel, and Voss describe without knowing they're describing the same system.
+*For resistance, ambivalence, change talk, sustain talk and autonomy-supportive coaching.*
+
+---
+
+### 1. Tavistock and Portman — *Motivational Interviewing: Introductory Module* 🟡 Course
+
+> The best benchmark course for the central problems this toolkit is trying to solve: resistance without power struggles, ambivalence, reluctance, defensive engagement and young people who are not yet ready to change.
+>
+> Most useful if the goal is to improve live conversational skill rather than simply read more theory.
+
+- [ ] Complete
+
+---
+
+### 2. Miller, W. R., & Rollnick, S. — *Motivational Interviewing: Helping People Change*
+
+> The canonical MI text.
+>
+> Read for the core spirit of MI: partnership, acceptance, compassion and evocation. The practical shift is learning to stop arguing for change and instead draw out the young person’s own reasons for change.
 
 - [ ] Read
 
 ---
 
-#### 2. Johnson, M. H., & de Haan, M. (2015) — *Developmental Cognitive Neuroscience: An Introduction* (4th ed.)
-**Wiley-Blackwell**
+### 3. Naar, S., & Suarez, M. — *Motivational Interviewing with Adolescents and Young Adults*
 
-> The structural map of the developing brain from birth through adolescence. Foundational empirical neuroscience before clinical application. The "why" behind every clinical intervention with young people.
-
-- [ ] Read
-
----
-
-#### 3. Thapar, A., Pine, D. S., Leckman, J. F., Scott, S., Snowling, M. J., & Taylor, E. A. (Eds.). (2015) — *Rutter's Child and Adolescent Psychiatry* (6th ed.)
-**John Wiley & Sons**
-
-> The clinical reference standard. Dense, encyclopaedic, not a cover-to-cover read — but the authoritative empirical map of the full diagnostic and developmental landscape you work in. The benchmark against which all applied texts should be checked.
+> The youth-specific MI text.
+>
+> Particularly relevant for developmental resistance, anti-authority stance, shame, ambivalence, identity-protective non-change and disengagement.
 
 - [ ] Read
 
 ---
 
-#### 4. Blakemore, S.-J. (2018) — *Inventing Ourselves: The Secret Life of the Teenage Brain*
-**PublicAffairs**
+### 4. Rollnick, S., Kaplan, S. G., & Rutschman, R. — *Motivational Interviewing in Schools*
 
-> Rutter translated for the practitioner. Blakemore bridges rigorous neuroscience into the lived experience of adolescence — risk-taking, identity, social sensitivity, peer influence. The most readable entry point to the empirical neuroscience of the cohort you mentor.
-
-- [ ] Read
-
----
-
-### Tier 2: Mentalization & Psychodynamic Theory
-*The relational architecture built on top of the biological substrate. How minds make sense of other minds.*
-
----
-
-#### 5. Fonagy, P., Gergely, G., Jurist, E. L., & Target, M. (2002) — *Affect Regulation, Mentalization, and the Development of the Self*
-**Other Press**
-
-> The canonical theoretical text. This is Fonagy at full theoretical depth — the developmental origins of mentalization, why affect regulation and reflective functioning are inseparable, and how early relational failures produce the clinical presentations you will have managed in NHS acute settings. Read before any of the applied Fonagy material.
+> The education-setting bridge.
+>
+> Useful for applying MI in contexts where the young person has not necessarily chosen to seek help, and where staff authority, attendance, behaviour and learning expectations shape the interaction.
 
 - [ ] Read
 
 ---
 
-#### 6. Waddell, M. (2002) — *Inside Lives: Psychoanalysis and the Growth of the Personality* (Rev. ed.)
-**Karnac Books**
+## Tier 2: Challenging Behaviour Without Power Struggles
 
-> The most accessible entry into object relations and Kleinian developmental theory. Where Fonagy gives you the empirical architecture, Waddell gives you the emotional phenomenology — what it *feels like* to be a developing person. Essential for understanding the adolescents you work with from the inside out.
+*For reframing behaviour, reducing escalation and avoiding adversarial cycles.*
+
+---
+
+### 5. Greene, R. W. — *Lost at School* 🟡 Priority
+
+> One of the most useful books for alternative provision.
+>
+> The core idea is simple and powerful: challenging behaviour often reflects lagging skills and unsolved problems, not wilful defiance. This complements MI extremely well.
 
 - [ ] Read
 
 ---
 
-#### 7. Papadopoulos, R. K. (Ed.). (2001) — *Multiple Voices: Narrative in Systemic Family Psychotherapy*
-**Routledge**
+### 6. Greene, R. W. — *The Explosive Child*
 
-> Bridges psychodynamic theory into the systemic and narrative frame. Particularly relevant for inner city youth work where family systems are complex, fragmented, or adversarial. Sits between the Fonagy theoretical core and the applied AMBIT framework.
-
-- [ ] Read
-
----
-
-#### 8. Bevington, D., Fuggle, P., Cracknell, L., & Fonagy, P. (2017) — *Adaptive Mentalization-Based Integrative Treatment (AMBIT)*
-**Oxford University Press**
-
-> Theory translated into a team-based, community-facing system of care. The most directly applicable clinical framework for working with hard-to-reach young people outside formal clinical settings — i.e., exactly what park-bench mentoring requires. Read Fonagy (2002) first.
+> More family-facing than *Lost at School*, but highly useful for understanding escalation, rigidity, frustration tolerance and collaborative problem solving.
+>
+> Useful for one-to-one mentoring with young people who rapidly enter fight, flight or shutdown around demands.
 
 - [ ] Read
 
 ---
 
-#### 9. Rossouw, T. I., & Fonagy, P. (2021) — *Mentalization-Based Treatment for Adolescents: A Practical Guide*
-**American Psychiatric Association Publishing**
+### 7. Hughes, D. — *PACE: Playfulness, Acceptance, Curiosity, Empathy*
 
-> The most applied end of the Fonagy school. A practical clinical manual for MBT-A. Read last in this tier — it assumes the theory and system above.
+> A practical relational stance rather than just a theory.
+>
+> PACE gives mentors a usable posture in difficult moments: remain warm, reduce shame, get curious about the function of behaviour, and preserve connection while still holding boundaries.
+
+- [ ] Explore
+
+---
+
+### 8. Faber, A., & Mazlish, E. — *How to Talk So Teens Will Listen and Listen So Teens Will Talk*
+
+> A practical communication text.
+>
+> Useful for staff who do not need dense theory but do need better responses to sarcasm, refusal, defensiveness, embarrassment, anger and shutdown.
 
 - [ ] Read
 
 ---
 
-### Tier 3: Youth Development, Adversity & Context
-*The world the young people you mentor are actually living inside — developmental, structural, digital.*
+## Tier 3: Mentalizing and Reflective Team Practice
+
+*For staying curious, avoiding certainty, and improving team consistency.*
 
 ---
 
-#### 10. Frankl, V. E. (1959) — *Man's Search for Meaning* 🆕
-**Beacon Press**
+### 9. Anna Freud — *Introduction to Supporting Children and Families with MBT* 🟡 Course
 
-> Foundational before the others in this tier because it establishes the primary motivational question: *why engage with anything at all?* Logotherapy — meaning as the core human driver — is not philosophy for practitioners. When a disengaged inner city adolescent has no reason to engage with life, this framework is the only one that directly addresses the clinical obstacle. Read first in this tier.
+> The best entry point into mentalization for this context.
+>
+> The practical value is learning to notice when mentalizing collapses: when a young person, parent, mentor or staff member becomes certain, defensive, misread, shamed or reactive.
+
+- [ ] Complete
+
+---
+
+### 10. Bevington, D., Fuggle, P., Cracknell, L., & Fonagy, P. — *Adaptive Mentalization-Based Integrative Treatment*
+
+> AMBIT is especially relevant where work is community-facing, multi-agency, relational and messy.
+>
+> Less about individual therapy; more about how teams stay coordinated, reflective and adaptive around hard-to-reach young people.
 
 - [ ] Read
 
 ---
 
-#### 11. Dweck, C. S. (2006) — *Mindset: The New Psychology of Success* 🆕
-**Random House**
+### 11. Anna Freud — *Developing Reflective Practice and Supervision in Schools and Colleges* 🟡 Course
 
-> The most glaring omission from the original list. Growth vs fixed mindset is the operational framework of effective youth mentoring — particularly with young people who have been institutionally designated as failures. The research is robust; the practical application is immediate. A direct, high-leverage read.
+> Useful if the aim is team effectiveness, not just personal learning.
+>
+> Reflective practice helps staff notice patterns, avoid reactive responses and process difficult work without turning every problem into discipline, rescue or avoidance.
+
+- [ ] Complete
+
+---
+
+### 12. CORC — *Outcome and Experience Measures* 🟢 Free
+
+> A practical way to track whether mentoring is helping.
+>
+> Use lightly: goal-based outcomes, session feedback, wellbeing trends and young-person voice. For alternative provision, the most useful measures may be engagement, attendance, confidence, self-defined goals, felt safety and next-step progress.
+
+- [ ] Explore
+
+---
+
+# 🧠 Section 2: Adolescence, Neurodiversity & Development
+
+> The context layer: how teenagers think, how exclusion and shame affect motivation, and how neurodivergent young people can be misunderstood in education settings.
+
+---
+
+## Tier 1: Teenage Development and Emotional Life
+
+---
+
+### 13. Siegel, D. J. — *Brainstorm*
+
+> A practical bridge between neuroscience and adolescent experience.
+>
+> Useful for understanding risk, identity, emotional intensity, peer status and the developmental drive toward independence.
 
 - [ ] Read
 
 ---
 
-#### 12. Maté, G. (2019) — *Scattered Minds: The Origins and Healing of Attention Deficit Disorder* 🆕
-**Random House**
+### 14. Blakemore, S.-J. — *Inventing Ourselves: The Secret Life of the Teenage Brain*
 
-> Maté's central argument — that ADHD is substantially a developmental trauma response rather than a fixed neurodevelopmental trait — directly reframes how you approach the disengaged, dysregulated young people in your caseload. The NHS acute population and inner city London mentoring cohort have enormous ADHD-trauma overlap. More clinically challenging than Perry, more applicable to developmental presentations than van der Kolk.
-
-- [ ] Read
-
----
-
-#### 13. Perry, B. D., & Szalavitz, M. (2017) — *The Boy Who Was Raised as a Dog* (Rev. ed.)
-**Basic Books**
-
-> Perry's Neurosequential Model of Therapeutics in narrative form. More accessible than the clinical papers, more developmentally focused than van der Kolk. Shows what developmental trauma actually looks like as a lived experience — essential reading for understanding your mentoring cohort's histories.
+> Strong evidence-based adolescent neuroscience.
+>
+> Useful for understanding social sensitivity, peer influence, identity, risk-taking and learning during adolescence.
 
 - [ ] Read
 
 ---
 
-#### 14. Tough, P. (2012) — *How Children Succeed: Grit, Curiosity, and the Hidden Power of Character* 🆕
-**Houghton Mifflin Harcourt**
+### 15. Damour, L. — *The Emotional Lives of Teenagers*
 
-> Fills a structural gap nothing else on the list fills. Drawing on economics, neuroscience, and education research, Tough maps why disadvantaged young people succeed or fail — the role of early adversity, stress physiology, and character development. Less clinical than the Fonagy school, more structural. Essential for understanding *why* inner city mentoring is categorically different from suburban mentoring.
-
-- [ ] Read
-
----
-
-#### 15. Twenge, J. M. (2017) — *iGen: Why Today's Super-Connected Kids Are Growing Up Less Rebellious, More Tolerant, Less Happy* 🆕
-**Atria Books**
-
-> Specific to your profile. Your tech background means you will read Twenge's data differently to most practitioners — you understand what she's describing from the architecture side as well as the clinical side. The smartphone generation cohort anxiety, identity fragmentation, social comparison, and attention patterns are the actual digital context your mentees are living inside. No other text on this list addresses the digital environment directly.
+> Very usable for staff language.
+>
+> Good for validating adolescent distress without over-clinicalising normal teenage development.
 
 - [ ] Read
 
 ---
 
-### Tier 4: Conversational Tooling & Clinical Bridge
-*The applied practitioner layer. Theory enacted in conversation.*
+### 16. Damour, L. — *Untangled*
 
----
-
-#### 16. White, M., & Epston, D. (1990) — *Narrative Means to Therapeutic Ends*
-**W. W. Norton & Company**
-
-> The foundational text of narrative therapy. The externalisation of problems, re-authoring conversations, and the therapeutic use of story sit at the heart of effective youth work and connect directly to the systemic-narrative layer in Papadopoulos above.
+> Written around girls’ development, but many ideas are useful more broadly.
+>
+> Helpful for thinking about autonomy, identity, emotional intensity, peer dynamics and adult-young person conflict.
 
 - [ ] Read
 
 ---
 
-#### 17. Naar, S., & Suarez, M. (2021) — *Motivational Interviewing with Adolescents and Young Adults* (2nd ed.)
-**Guilford Press**
+## Tier 2: Neurodiversity, Unmet Needs and School Belonging
 
-> Preferred over Miller & Rollnick's original text for your context. This adaptation is built specifically for developmental resistance in youth — the ambivalence, the identity investment in non-change, the anti-authority stance. Directly applicable to mentoring sessions.
+---
+
+### 17. Anna Freud — *Neurodiversity and Wellbeing in Schools* 🟢 Free / eligibility-dependent
+
+> Highly relevant to alternative provision.
+>
+> Use to strengthen understanding of attendance difficulties, masking, sensory stress, social exhaustion, misunderstood behaviour and the emotional burden of school environments for autistic, ADHD and AuDHD students.
+
+- [ ] Explore
+
+---
+
+### 18. Maté, G. — *Scattered Minds* ⚠️ Use Critically
+
+> Useful as a reflective lens on attention, development and environment.
+>
+> Should not replace mainstream ADHD guidance. Best used to think about the overlap between attention, emotional regulation, adversity and context.
 
 - [ ] Read
 
 ---
 
-#### 18. Rollnick, S., Kaplan, S. G., & Rutschman, R. (2016) — *Motivational Interviewing in Schools*
-**Guilford Publications**
+### 19. YoungMinds — *Professional Resources* 🟢 Free
 
-> The most specific application of MI to the environments your mentees actually inhabit. Pairs with Naar & Suarez to give you the full MI toolkit for adolescent work in non-clinical settings.
+> Practical and shareable.
+>
+> Useful for one-to-one mentoring, group activities, posters, worksheets and staff refreshers.
+
+- [ ] Explore
+
+---
+
+### 20. Charlie Waller Trust — *Webinars and Resource Library* 🟢 Free
+
+> One of the best free CPD layers.
+>
+> Useful for low-budget staff development around young people’s mental health, anxiety, self-harm, sleep, stress, conversations and education settings.
+
+- [ ] Explore
+
+---
+
+# 🛡️ Section 3: Safeguarding, Self-Harm & Risk Confidence
+
+> Not because the provision is primarily clinical, but because education staff still need a safe shared response when risk appears.
+>
+> The aim is clarity, boundaries and escalation — not therapy.
+
+---
+
+## Tier 1: Baseline Safety and Escalation
+
+---
+
+### 21. NSPCC Learning — *Introduction to Safeguarding and Child Protection* 🔴 Safety
+
+> A shared minimum baseline.
+>
+> Useful for recognising, responding, recording and reporting concerns, especially when staff have varied prior safeguarding experience.
+
+- [ ] Complete
+
+---
+
+### 22. NSPCC Learning — *County Lines Safeguarding Training* 🔴 Safety
+
+> Important for context-sensitive safeguarding.
+>
+> Relevant where exclusion, vulnerability, coercion, missing episodes, peer pressure, grooming and criminal exploitation may overlap.
+
+- [ ] Complete
+
+---
+
+### 23. PAPYRUS — *Spark / Speak / ASIST Suicide Prevention Training* 🔴 Safety
+
+> Builds confidence for hard conversations.
+>
+> Start with Spark or Speak unless the role routinely involves higher-risk crisis response. The practical outcome should be: recognise signs, ask clearly, keep safe, record, escalate and follow the organisation’s safeguarding procedure.
+
+- [ ] Complete
+
+---
+
+### 24. NICE Guideline NG225 — *Self-Harm: Assessment, Management and Preventing Recurrence* 🟢 Free
+
+> A reference point for procedure and policy.
+>
+> Not a mentoring manual, but useful for sense-checking organisational responses and avoiding unsafe myths or inconsistent practice around self-harm.
+
+- [ ] Review
+
+---
+
+## Tier 2: Trauma-Aware Without Over-Clinicalising
+
+---
+
+### 25. UK Trauma Council — *Childhood Trauma Resources* 🟢 Free
+
+> Trauma may not be the headline of the work, but it may sit in the background.
+>
+> Use this to avoid overreacting, underreacting or interpreting every dysregulated response as simple defiance.
+
+- [ ] Explore
+
+---
+
+### 26. Golding, K. S. — *Using Stories to Build Bridges with Traumatized Children*
+
+> Practical, relational and non-threatening.
+>
+> Useful for building language, metaphor and connection with young people who struggle to talk directly about themselves, their histories or their behaviour.
 
 - [ ] Read
 
 ---
 
----
+### 27. Perry, B. D., & Szalavitz, M. — *The Boy Who Was Raised as a Dog*
 
-## 🗣️ Section 2: Persuasion, Negotiation & Charisma
-
-> Ordered **architecturally** — theoretical neuroscience and psychology first, tactical frameworks second, applied behaviours third, power dynamics last.
-> The persuasion section compounds differently: the theory makes the tactics legible; the tactics make the theory usable.
-
----
-
-### Tier 1: The Architecture of Human Decision-Making
-*Why people believe, decide, and comply — before any tactical intervention.*
-
----
-
-#### 19. Kahneman, D. (2011) — *Thinking, Fast and Slow*
-**Farrar, Straus and Giroux**
-
-> The canonical foundation. System 1 vs System 2 — fast, emotional, automatic vs slow, deliberate, logical — is the theoretical architecture on which every tactical persuasion framework in this list is built. Ariely, Cialdini, Voss, and Klaff are all operating inside the framework Kahneman describes. Read this first and the rest of the section becomes a practical field manual for a single unified theory.
+> Background empathy and developmental understanding.
+>
+> Not the first purchase for this specific brief, but helpful for understanding how early adversity can shape behaviour, regulation and threat perception.
 
 - [ ] Read
 
 ---
 
-#### 20. Ariely, D. (2008) — *Predictably Irrational: The Hidden Forces That Shape Our Decisions* 🆕
-**HarperCollins**
+# 🧭 Section 4: Deeper Practice & Defensive Influence Literacy
 
-> Where Kahneman is the architecture, Ariely is the field manual. Shows exactly how irrationality operates in pricing, social norms, expectations, and daily decisions — with experiments that are immediately generalisable to sales, negotiation, and influence contexts. Read second in this tier.
+> Useful once the core practice stack is in place.
+>
+> These resources deepen narrative work, coaching, meaning and influence literacy — but they should not displace MI, safeguarding or reflective practice.
+
+---
+
+## Tier 1: Narrative, Coaching and Meaning
+
+---
+
+### 28. White, M., & Epston, D. — *Narrative Means to Therapeutic Ends*
+
+> Useful for identity and story.
+>
+> Helps separate the young person from the problem: “I am not the failure; I am someone who has repeatedly experienced failing in this system.”
 
 - [ ] Read
 
 ---
 
-#### 21. Haidt, J. (2012) — *The Righteous Mind: Why Good People Are Divided by Politics and Religion* 🆕
-**Pantheon Books**
+### 29. Bungay Stanier, M. — *The Coaching Habit* 🟡 Practical
 
-> The single biggest genuine gap in the original persuasion section. Cialdini tells you *how* to influence; Kahneman tells you *why* people are irrational; Haidt tells you *why people hold the values they hold*. Moral foundations theory — care, fairness, loyalty, authority, sanctity, liberty — is the most powerful persuasion framework not on the original list. Essential for cross-cultural, cross-class influence, which inner city London work and commercial negotiations both require constantly.
-
-- [ ] Read
-
----
-
-#### 22. Cialdini, R. B. (1984) — *Influence: The Psychology of Persuasion*
-**Harper Business**
-
-> The applied translation of the Kahneman framework into six universal principles: reciprocity, commitment, social proof, authority, liking, scarcity. The most empirically grounded tactical persuasion text in existence. Read after Kahneman and Ariely — the principles land with far greater force once you understand the cognitive architecture they exploit.
+> Short, simple and immediately usable.
+>
+> Excellent for reducing advice-dumping and training the habit of asking better questions before jumping into fixing.
 
 - [ ] Read
 
 ---
 
-#### 23. Cialdini, R. B. (2016) — *Pre-Suasion: A Revolutionary Way to Influence and Persuade*
-**Simon & Schuster**
+### 30. Frankl, V. E. — *Man’s Search for Meaning*
 
-> *Influence* maps the six principles. *Pre-Suasion* covers the moment before the ask — how environmental and contextual priming determines receptivity before a word is spoken. The natural sequel; read immediately after *Influence*.
-
-- [ ] Read
-
----
-
-### Tier 2: High-Stakes Negotiation *(Tactical Empathy)*
-*Frameworks built for environments where "no" has real consequences.*
-
----
-
-#### 24. Fisher, R., & Ury, W. (1981) — *Getting to Yes: Negotiating Agreement Without Giving In*
-**Penguin Books**
-
-> The academic gold standard and canonical starting point. Principled negotiation — separating the person from the problem, focusing on underlying interests rather than stated positions — is the foundational theory. Read before *Getting Past No* and *Never Split the Difference*, both of which are responses to situations this book assumes away.
+> Useful for thinking about meaning, purpose and agency.
+>
+> Not a youth-work manual, but relevant when the deeper question is: “Why should this young person engage with education, skills, work or their future at all?”
 
 - [ ] Read
 
 ---
 
-#### 25. Ury, W. (1991) — *Getting Past No: Negotiating in Difficult Situations* 🆕
-**Bantam Books**
+### 31. Dweck, C. S. — *Mindset* ⚠️ Use Carefully
 
-> The field manual for when the other side refuses, stalls, or attacks — the tactical counterpart to the theoretical framework in *Getting to Yes*. More practically useful than its predecessor in adversarial or emotionally charged negotiations. Bridges directly into the silver tongue skillset.
-
-- [ ] Read
-
----
-
-#### 26. Voss, C., & Raz, T. (2016) — *Never Split the Difference*
-**HarperBusiness**
-
-> Clinical psychology tools weaponised for negotiation — mirroring, labelling, dynamic silence, the calibrated question. The most tactically dense text in this tier. Read last; it assumes and extends everything Fisher, Ury, Kahneman, and Cialdini establish.
+> Useful for learning, practice and failure.
+>
+> Avoid using “growth mindset” as a slogan. In alternative provision, mindset work must be paired with real support, psychological safety, skill-building and credible success experiences.
 
 - [ ] Read
 
 ---
 
-### Tier 3: Charisma, Frame Control & Micro-Behaviour
-*The interpersonal layer — how you are perceived before you speak, and while you speak.*
+## Tier 2: Influence Literacy, Ethically Bounded
 
 ---
 
-#### 27. Carnegie, D. (1936) — *How to Win Friends and Influence People* 🆕
-**Simon & Schuster**
+### 32. Cialdini, R. B. — *Influence*
 
-> Placed first in this tier deliberately. The list has strong theoretical architecture and was missing the micro-behavioural layer entirely. Carnegie operates at the level of specific conversational moves — genuine interest, active listening, remembering names, letting people feel heard — that Cialdini and Voss assume you already possess. Read before Cabane and Klaff; the higher-level frameworks land better when the foundations are explicit.
+> Useful as defensive influence literacy.
+>
+> Helps practitioners recognise social proof, authority, scarcity, liking and commitment pressures. In youth mentoring, this belongs behind autonomy and consent.
 
 - [ ] Read
 
 ---
 
-#### 28. Cabane, O. F. (2012) — *The Charisma Myth*
-**Portfolio/Penguin**
+### 33. Voss, C., & Raz, T. — *Never Split the Difference*
 
-> Charisma decomposed into three learnable components — Presence, Power, and Warmth — and rebuilt as a practical behavioural system. Removes the mythology from magnetism. The natural bridge from Carnegie's micro-behaviours into Klaff's higher-order frame control.
-
-- [ ] Read
-
----
-
-#### 29. Klaff, O. (2011) — *Pitch Anything*
-**McGraw-Hill**
-
-> Frame control at the neurological level. Most pitches fail because they address the neocortex; all information is filtered first by the amygdala. Klaff's STRONG framework teaches you to win the neurological filter before logic enters. Read last in this tier — requires the micro-behavioural and charisma foundations to execute properly.
+> Selective use only.
+>
+> Mirroring, labelling and calibrated questions can be useful. But “winning the negotiation” should not become the frame for youth work. Use only the parts that support listening, de-escalation and clarity.
 
 - [ ] Read
 
 ---
 
-### Tier 4: Power, Dark Arts & Practitioner Regulation
-*Understanding how power moves in human systems — and the philosophical regulation framework to operate within them without being consumed.*
+### 34. Holiday, R. — *The Obstacle Is the Way*
 
----
-
-#### 30. Schopenhauer, A. (c. 1831, pub. posth.) — *The Art of Being Right (Eristic Dialectic)* 🆕
-**Various editions**
-
-> Placed first in this tier because it is fundamentally about epistemology and argumentation — the mechanics of how people win disputes regardless of truth. Thirty-eight stratagems for argument. Essential for frame control: both for deploying these tactics and, critically, for *recognising when they are being used on you*. The dark arts companion on logic and rhetoric.
+> Lightweight practitioner self-regulation.
+>
+> Useful for staying steady under frustration, rejection and slow progress, but secondary to supervision, reflective practice and good organisational support.
 
 - [ ] Read
 
 ---
 
-#### 31. Greene, R. (1998) — *The 48 Laws of Power*
-**Viking Press**
+# 🛒 Suggested First Purchase Stack
 
-> The translation layer that makes the primary historical sources (Machiavelli, Sun Tzu, Clausewitz) redundant for a practitioner. Greene synthesises thousands of years of power strategy into modern, applicable laws. Ruthless, amoral, and essential for reading the subtext of office politics, commercial negotiations, and personal branding. Read after Schopenhauer — the laws land with greater force once you understand the dialectical mechanics underneath them.
+For a **£250–£500** budget, the most practical first stack would be:
 
-- [ ] Read
+## Buy first
+
+1. **Naar & Suarez — *Motivational Interviewing with Adolescents and Young Adults***
+2. **Ross Greene — *Lost at School***
+3. **Michael Bungay Stanier — *The Coaching Habit***
+4. **Lisa Damour — *The Emotional Lives of Teenagers***
+5. **Dan Siegel — *Brainstorm***
+
+## Then add
+
+6. **Miller & Rollnick — *Motivational Interviewing***
+7. **Rollnick et al. — *Motivational Interviewing in Schools***
+8. **PACE resources / Dan Hughes-informed materials**
+9. **Kim Golding — *Using Stories to Build Bridges with Traumatized Children***
+
+## Course priority
+
+If budget allows, prioritise:
+
+1. **Motivational Interviewing training**
+2. **NSPCC safeguarding / county lines**
+3. **PAPYRUS Spark or Speak**
+4. **Anna Freud MBT-CYP introductory e-learning**
+5. **Anna Freud reflective practice / supervision training**
 
 ---
 
-#### 32. Holiday, R. (2014) — *The Obstacle Is the Way* 🆕
-**Portfolio/Penguin**
-
-> Placed last on the entire list intentionally. This is the regulation framework for practitioners operating in high-stakes environments — Stoic philosophy stripped of academic weight and rebuilt as a field manual for adversity. The discipline of non-reaction, the reframing of obstacles as material, the acceptance of what cannot be controlled. Everything Porges describes neurologically, the Stoics described philosophically. Read when the rest of the list is complete.
-
-- [ ] Read
-
----
-
----
-
-## ✅ Quick Checklist
+# ✅ Quick Checklist
 
 <details>
 <summary>Click to expand — full progress tracker</summary>
 
-### 🧠 Section 1 — Clinical, Neurobiology & Mentoring
+## Section 1 — Core Practice Stack
 
-#### Tier 1: Biological Foundations
-- [ ] Porges — *The Polyvagal Theory* 🆕
-- [ ] Johnson & de Haan — *Developmental Cognitive Neuroscience*
-- [ ] Thapar et al. — *Rutter's Child and Adolescent Psychiatry*
-- [ ] Blakemore — *Inventing Ourselves*
+### Motivational Interviewing
+- [ ] Tavistock and Portman — *Motivational Interviewing: Introductory Module*
+- [ ] Miller & Rollnick — *Motivational Interviewing*
+- [ ] Naar & Suarez — *Motivational Interviewing with Adolescents and Young Adults*
+- [ ] Rollnick, Kaplan & Rutschman — *Motivational Interviewing in Schools*
 
-#### Tier 2: Mentalization & Psychodynamic Theory
-- [ ] Fonagy et al. — *Affect Regulation, Mentalization, and the Development of the Self*
-- [ ] Waddell — *Inside Lives*
-- [ ] Papadopoulos — *Multiple Voices*
+### Challenging Behaviour Without Power Struggles
+- [ ] Ross Greene — *Lost at School*
+- [ ] Ross Greene — *The Explosive Child*
+- [ ] Dan Hughes / DDP — *PACE Resources*
+- [ ] Faber & Mazlish — *How to Talk So Teens Will Listen and Listen So Teens Will Talk*
+
+### Mentalizing and Reflective Team Practice
+- [ ] Anna Freud — *Introduction to Supporting Children and Families with MBT*
 - [ ] Bevington et al. — *AMBIT*
-- [ ] Rossouw & Fonagy — *MBT for Adolescents*
+- [ ] Anna Freud — *Developing Reflective Practice and Supervision*
+- [ ] CORC — *Outcome and Experience Measures*
 
-#### Tier 3: Youth Development, Adversity & Context
-- [ ] Frankl — *Man's Search for Meaning* 🆕
-- [ ] Dweck — *Mindset* 🆕
-- [ ] Maté — *Scattered Minds* 🆕
+## Section 2 — Adolescence, Neurodiversity & Development
+
+### Teenage Development and Emotional Life
+- [ ] Daniel Siegel — *Brainstorm*
+- [ ] Sarah-Jayne Blakemore — *Inventing Ourselves*
+- [ ] Lisa Damour — *The Emotional Lives of Teenagers*
+- [ ] Lisa Damour — *Untangled*
+
+### Neurodiversity, Unmet Needs and School Belonging
+- [ ] Anna Freud — *Neurodiversity and Wellbeing in Schools*
+- [ ] Gabor Maté — *Scattered Minds*
+- [ ] YoungMinds — *Professional Resources*
+- [ ] Charlie Waller Trust — *Webinars and Resource Library*
+
+## Section 3 — Safeguarding, Self-Harm & Risk Confidence
+
+### Baseline Safety and Escalation
+- [ ] NSPCC — *Introduction to Safeguarding and Child Protection*
+- [ ] NSPCC — *County Lines Safeguarding Training*
+- [ ] PAPYRUS — *Spark / Speak / ASIST*
+- [ ] NICE NG225 — *Self-Harm Guidance*
+
+### Trauma-Aware Without Over-Clinicalising
+- [ ] UK Trauma Council — *Childhood Trauma Resources*
+- [ ] Kim Golding — *Using Stories to Build Bridges with Traumatized Children*
 - [ ] Perry & Szalavitz — *The Boy Who Was Raised as a Dog*
-- [ ] Tough — *How Children Succeed* 🆕
-- [ ] Twenge — *iGen* 🆕
 
-#### Tier 4: Conversational Tooling
+## Section 4 — Deeper Practice & Defensive Influence Literacy
+
+### Narrative, Coaching and Meaning
 - [ ] White & Epston — *Narrative Means to Therapeutic Ends*
-- [ ] Naar & Suarez — *MI with Adolescents*
-- [ ] Rollnick et al. — *MI in Schools*
+- [ ] Michael Bungay Stanier — *The Coaching Habit*
+- [ ] Viktor Frankl — *Man’s Search for Meaning*
+- [ ] Carol Dweck — *Mindset*
 
-### 🗣️ Section 2 — Persuasion, Negotiation & Charisma
-
-#### Tier 1: Architecture of Decision-Making
-- [ ] Kahneman — *Thinking, Fast and Slow*
-- [ ] Ariely — *Predictably Irrational* 🆕
-- [ ] Haidt — *The Righteous Mind* 🆕
-- [ ] Cialdini — *Influence*
-- [ ] Cialdini — *Pre-Suasion*
-
-#### Tier 2: High-Stakes Negotiation
-- [ ] Fisher & Ury — *Getting to Yes*
-- [ ] Ury — *Getting Past No* 🆕
-- [ ] Voss — *Never Split the Difference*
-
-#### Tier 3: Charisma & Frame Control
-- [ ] Carnegie — *How to Win Friends and Influence People* 🆕
-- [ ] Cabane — *The Charisma Myth*
-- [ ] Klaff — *Pitch Anything*
-
-#### Tier 4: Power & Regulation
-- [ ] Schopenhauer — *The Art of Being Right* 🆕
-- [ ] Greene — *The 48 Laws of Power*
-- [ ] Holiday — *The Obstacle Is the Way* 🆕
+### Influence Literacy, Ethically Bounded
+- [ ] Robert Cialdini — *Influence*
+- [ ] Chris Voss — *Never Split the Difference*
+- [ ] Ryan Holiday — *The Obstacle Is the Way*
 
 </details>
 
 ---
 
-> *Ordered canonically: foundational theory → applied practice. Read in sequence for maximum compounding.*
+> *Practical-first. Education-led. Wellbeing-informed. Built for engagement, autonomy, safeguarding and better mentoring conversations.*
